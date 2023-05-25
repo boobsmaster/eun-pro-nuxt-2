@@ -4,77 +4,149 @@
       <header class="equipment__header">
         <div class="equipment__header-appendix"></div>
         <h2 class="equipment__header-title">Применяемое оборудование</h2>
-        <div class="equipment__header-link"><img class="equipment__header-link-icon" src="~/assets/icons/chevron.svg"
-                                                 alt=""/><span
-            class="equipment__header-link-text">Все оборудование</span><a class="equipment__header-link-source"
-                                                                          href=""></a></div>
+        <div class="equipment__header-link">
+          <img
+            class="equipment__header-link-icon"
+            src="~/assets/icons/chevron.svg"
+            alt=""
+          /><span class="equipment__header-link-text">Все оборудование</span
+          ><a class="equipment__header-link-source" href=""></a>
+        </div>
       </header>
       <div class="equipment__grid">
         <div class="equipment__item">
-          <div class="equipment__item-image"><img class="equipment__item-image-source"
-                                                  src="~/assets/images/equipment-1.png" alt=""/></div>
+          <div class="equipment__item-image">
+            <img
+              class="equipment__item-image-source"
+              src="~/assets/images/equipment-1.png"
+              alt=""
+            />
+          </div>
           <div class="equipment__item-title">GNSS-приемники Topcon Hiper V</div>
         </div>
         <div class="equipment__item">
-          <div class="equipment__item-image"><img class="equipment__item-image-source"
-                                                  src="~/assets/images/equipment-2.png" alt=""/></div>
+          <div class="equipment__item-image">
+            <img
+              class="equipment__item-image-source"
+              src="~/assets/images/equipment-2.png"
+              alt=""
+            />
+          </div>
           <div class="equipment__item-title">Тахеометр Sokkia SET 550RX</div>
         </div>
         <div class="equipment__item">
-          <div class="equipment__item-image"><img class="equipment__item-image-source"
-                                                  src="~/assets/images/equipment-3.png" alt=""/></div>
+          <div class="equipment__item-image">
+            <img
+              class="equipment__item-image-source"
+              src="~/assets/images/equipment-3.png"
+              alt=""
+            />
+          </div>
           <div class="equipment__item-title">Дальномер Leica Disto A5</div>
         </div>
         <div class="equipment__item">
-          <div class="equipment__item-image"><img class="equipment__item-image-source"
-                                                  src="~/assets/images/equipment-4.png" alt=""/></div>
+          <div class="equipment__item-image">
+            <img
+              class="equipment__item-image-source"
+              src="~/assets/images/equipment-4.png"
+              alt=""
+            />
+          </div>
           <div class="equipment__item-title">Детектор Bosch D-TECT 150 SV</div>
         </div>
       </div>
       <div class="equipment__content">
         <button class="equipment__button equipment__button_slide-prev">
-          <svg width="24" height="25" viewBox="0 0 24 25" class='equipment__button-image' fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+          <svg
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            class="equipment__button-image"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 6.5L9 12.5L15 18.5"
+              stroke="#898088"
+              stroke-width="2"
+            />
           </svg>
         </button>
         <div class="swiper equipment__slider">
           <div class="swiper-wrapper equipment__slider-wrapper">
             <div class="swiper-slide equipment__slider-slide">
               <div class="equipment__item">
-                <div class="equipment__item-image"><img class="equipment__item-image-source"
-                                                        src="~/assets/images/equipment-1.png" alt=""/></div>
-                <div class="equipment__item-title">GNSS-приемники Topcon Hiper V</div>
+                <div class="equipment__item-image">
+                  <img
+                    class="equipment__item-image-source"
+                    src="~/assets/images/equipment-1.png"
+                    alt=""
+                  />
+                </div>
+                <div class="equipment__item-title">
+                  GNSS-приемники Topcon Hiper V
+                </div>
               </div>
             </div>
             <div class="swiper-slide equipment__slider-slide">
               <div class="equipment__item">
-                <div class="equipment__item-image"><img class="equipment__item-image-source"
-                                                        src="~/assets/images/equipment-2.png" alt=""/></div>
-                <div class="equipment__item-title">Тахеометр Sokkia SET 550RX</div>
+                <div class="equipment__item-image">
+                  <img
+                    class="equipment__item-image-source"
+                    src="~/assets/images/equipment-2.png"
+                    alt=""
+                  />
+                </div>
+                <div class="equipment__item-title">
+                  Тахеометр Sokkia SET 550RX
+                </div>
               </div>
             </div>
             <div class="swiper-slide equipment__slider-slide">
               <div class="equipment__item">
-                <div class="equipment__item-image"><img class="equipment__item-image-source"
-                                                        src="~/assets/images/equipment-3.png" alt=""/></div>
-                <div class="equipment__item-title">Дальномер Leica Disto A5</div>
+                <div class="equipment__item-image">
+                  <img
+                    class="equipment__item-image-source"
+                    src="~/assets/images/equipment-3.png"
+                    alt=""
+                  />
+                </div>
+                <div class="equipment__item-title">
+                  Дальномер Leica Disto A5
+                </div>
               </div>
             </div>
             <div class="swiper-slide equipment__slider-slide">
               <div class="equipment__item">
-                <div class="equipment__item-image"><img class="equipment__item-image-source"
-                                                        src="~/assets/images/equipment-4.png" alt=""/></div>
-                <div class="equipment__item-title">Детектор Bosch D-TECT 150 SV</div>
+                <div class="equipment__item-image">
+                  <img
+                    class="equipment__item-image-source"
+                    src="~/assets/images/equipment-4.png"
+                    alt=""
+                  />
+                </div>
+                <div class="equipment__item-title">
+                  Детектор Bosch D-TECT 150 SV
+                </div>
               </div>
             </div>
           </div>
           <div class="swiper-scrollbar"></div>
         </div>
         <button class="equipment__button equipment__button_slide-next">
-          <svg width="24" height="25" viewBox="0 0 24 25" class='equipment__button-image' fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 6.5L9 12.5L15 18.5" stroke="#898088" stroke-width="2"/>
+          <svg
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            class="equipment__button-image"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 6.5L9 12.5L15 18.5"
+              stroke="#898088"
+              stroke-width="2"
+            />
           </svg>
         </button>
       </div>
@@ -83,36 +155,36 @@
 </template>
 
 <script lang="ts">
-import {Swiper, Scrollbar, FreeMode} from 'swiper'
+import { Swiper, Scrollbar, FreeMode } from "swiper";
 
-export  class equipmentHandler {
-  mainContainer: HTMLElement | null = null
-  equipmentSliders: HTMLElement | null = null
-  buttonNext: HTMLElement | null = null
-  buttonPrev: HTMLElement | null = null
+export class equipmentHandler {
+  mainContainer: HTMLElement | null = null;
+  equipmentSliders: HTMLElement | null = null;
+  buttonNext: HTMLElement | null = null;
+  buttonPrev: HTMLElement | null = null;
 
   constructor(element: HTMLElement) {
-    this.mainContainer = element
+    this.mainContainer = element;
 
     this.equipmentSliders =
-      this.mainContainer.querySelector('.equipment__slider')
+      this.mainContainer.querySelector(".equipment__slider");
 
     this.buttonNext = this.mainContainer.querySelector(
-      '.equipment__button_slide-next',
-    )
+      ".equipment__button_slide-next"
+    );
     this.buttonPrev = this.mainContainer.querySelector(
-      '.equipment__button_slide-prev',
-    )
+      ".equipment__button_slide-prev"
+    );
 
-    this.initEquipmentSlider()
+    this.initEquipmentSlider();
 
-    return this
+    return this;
   }
 
   private initEquipmentSlider() {
     const swiper = new Swiper(this.equipmentSliders as HTMLElement, {
-      direction: 'horizontal',
-      touchEventsTarget: 'container',
+      direction: "horizontal",
+      touchEventsTarget: "container",
       slidesPerView: 3,
       spaceBetween: 32,
       observer: true,
@@ -120,36 +192,36 @@ export  class equipmentHandler {
 
       modules: [Scrollbar, FreeMode],
       scrollbar: {
-        el: '.swiper-scrollbar',
+        el: ".swiper-scrollbar",
         dragSize: 65,
         hide: false,
       },
-    })
+    });
 
-    this.buttonNext?.addEventListener('click', () => swiper.slideNext())
-    this.buttonPrev?.addEventListener('click', () => swiper.slidePrev())
+    this.buttonNext?.addEventListener("click", () => swiper.slideNext());
+    this.buttonPrev?.addEventListener("click", () => swiper.slidePrev());
 
-    return swiper
+    return swiper;
   }
 }
 const initEquipment = () => {
-  const equipment = document.querySelectorAll('.equipment')
+  const equipment = document.querySelectorAll(".equipment");
 
-  equipment.forEach(element => {
-    new equipmentHandler(element as HTMLElement)
-  })
-}
+  equipment.forEach((element) => {
+    new equipmentHandler(element as HTMLElement);
+  });
+};
 if (process.browser) {
-  window.addEventListener('load', initEquipment)
+  window.addEventListener("load", initEquipment);
 }
 export default {
-  name: "AppEquipment"
-}
+  name: "AppEquipment",
+};
 </script>
 
 <style lang="scss" scoped>
-@use '@/assets/scss/styles/utils' as ut;
-@use '@/assets/scss/styles/variables' as vars;
+@use "@/assets/scss/styles/mixins" as ut;
+@use "@/assets/scss/styles/variables" as vars;
 
 .equipment {
   display: flex;
@@ -443,5 +515,4 @@ export default {
     }
   }
 }
-
 </style>

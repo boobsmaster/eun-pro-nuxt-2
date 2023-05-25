@@ -155,7 +155,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/utils" as ut;
+@use "@/assets/scss/styles/mixins" as ut;
 @use "@/assets/scss/styles/variables" as vars;
 
 .about {
