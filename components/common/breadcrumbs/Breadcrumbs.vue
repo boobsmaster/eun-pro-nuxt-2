@@ -4,16 +4,23 @@ import Breadcrumb, { BreadcrumbType } from "./Breadcrumb.vue";
 
 export type BreadcrumbsListType = BreadcrumbType[];
 
+export interface BB {
+  links: BreadcrumbsListType;
+}
+
 export default {
   name: "Breadcrumbs",
   props: {
     links: { type: Array as PropType<BreadcrumbsListType>, required: true },
   },
-  data(props) {
-    const activeLink = props.links[props.links.length - 1];
+  data() {
+    // console.log("AAAAAA", this.props);
+
+    // const linksList = this.$props.links;
+    // const activeLink: BreadcrumbType = linksList[linksList.length - 1];
 
     return {
-      activeLink,
+      // activeLink,
     };
   },
 
@@ -27,7 +34,7 @@ export default {
       <Breadcrumb v-for="item in links" :key="item.id" :item="item" />
     </div>
 
-    <h2 class="breadcrumbs__title">{{ activeLink }}</h2>
+    <!-- <h2 class="breadcrumbs__title">{{ activeLink.name }}</h2> -->
   </div>
 </template>
 
