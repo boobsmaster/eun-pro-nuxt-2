@@ -1,12 +1,24 @@
 <script>
 import Section from "~/components/common/section/Section.vue";
+import SearchBlock from "~/components/pages/common/search/Search.vue";
 import Breadcrumbs from "~/components/common/breadcrumbs/Breadcrumbs.vue";
 
 export default {
   name: "Services",
-  components: { Breadcrumbs },
+  components: { Breadcrumbs, Section, SearchBlock },
   data() {
-    const breadcrumbsArray = ["главная", "все услуги"];
+    const breadcrumbsArray = [
+      {
+        id: "1",
+        name: "главная",
+        path: "/",
+      },
+      {
+        id: "2",
+        name: "все услуги",
+        path: "/",
+      },
+    ];
 
     return {
       breadcrumbsArray,
@@ -20,7 +32,16 @@ export default {
     <Section>
       <Breadcrumbs :links="breadcrumbsArray" />
     </Section>
+    <SearchBlock title="Поиск по услугам" />
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.services {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 20px 0;
+}
+</style>
