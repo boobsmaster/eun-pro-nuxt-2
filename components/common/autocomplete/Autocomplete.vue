@@ -17,10 +17,28 @@ export default {
 .autocomplete {
   position: relative;
 
+  width: 100%;
+  height: 100%;
+
   &__input {
-    width: 260px;
-    height: 40px;
+    width: 100%;
+    height: 100%;
+
+    padding: 12px;
+
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e1f2;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+
+      color: #828282;
+    }
   }
+
   &__options {
     position: absolute;
     top: 100%;

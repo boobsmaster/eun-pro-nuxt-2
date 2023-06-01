@@ -29,6 +29,12 @@ export default {
   border-radius: 5px;
   background: #ffb701;
 
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+
   transition: background-color vars.$transition-duration ease-in-out;
 
   @include mx.tablet {

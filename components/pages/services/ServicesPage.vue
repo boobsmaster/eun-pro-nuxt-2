@@ -10,13 +10,13 @@ export default {
     const breadcrumbsArray = [
       {
         id: "1",
-        name: "главная",
         path: "/",
+        name: "главная",
       },
       {
         id: "2",
-        name: "все услуги",
         path: "/",
+        name: "все услуги",
       },
     ];
 
@@ -32,6 +32,7 @@ export default {
     <Section>
       <Breadcrumbs :links="breadcrumbsArray" />
     </Section>
+
     <SearchBlock title="Поиск по услугам" />
   </div>
 </template>

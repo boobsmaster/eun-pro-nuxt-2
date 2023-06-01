@@ -23,9 +23,9 @@ export default {
         <div class="search__button">
           <Button>
             <Icon name="search" class="search__button-icon" />
+            <span class="search__button-text">Поиск</span>
+            <!-- <template class="search__button-text">Поиск</template> -->
           </Button>
-
-          <template class="search__button-text"> </template>
         </div>
       </div>
     </div>
@@ -33,6 +33,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/styles/mixins" as mx;
+@use "@/assets/scss/styles/variables" as vars;
+
 .search {
   display: flex;
   align-items: center;
@@ -42,6 +45,19 @@ export default {
   background: #f3f3f3;
 
   padding: 40px 0;
+  margin-top: 20px;
+
+  @include mx.tablet {
+    margin-top: 30px;
+    padding: 40px;
+
+    max-width: 720px;
+  }
+
+  @include mx.desktop {
+    margin-top: 46px;
+    max-width: 1200px;
+  }
 
   &__container {
     display: flex;
@@ -50,6 +66,10 @@ export default {
 
     width: 100%;
     max-width: 320px;
+
+    @include mx.tablet {
+      max-width: unset;
+    }
   }
 
   &__title {
@@ -65,20 +85,52 @@ export default {
     display: flex;
     align-items: center;
     gap: 20px;
+
+    @include mx.tablet {
+      gap: 30px;
+    }
   }
 
   &__field {
+    width: 260px;
+    height: 40px;
+
+    @include mx.tablet {
+      width: 433px;
+    }
+
+    @include mx.desktop {
+      width: 853px;
+    }
   }
 
   &__button {
     width: 40px;
     height: 40px;
+
+    @include mx.tablet {
+      width: 187px;
+    }
+
+    @include mx.desktop {
+      width: 237px;
+    }
   }
 
   &__button-icon {
+    display: flex;
+
+    @include mx.tablet {
+      display: none;
+    }
   }
 
   &__button-text {
+    display: none;
+
+    @include mx.tablet {
+      display: flex;
+    }
   }
 }
 </style>
