@@ -1,11 +1,12 @@
 <script>
 import Section from "~/components/common/section/Section.vue";
+import Options from "~/components/pages/services/variants/Options.vue";
 import SearchBlock from "~/components/pages/common/search/Search.vue";
 import Breadcrumbs from "~/components/common/breadcrumbs/Breadcrumbs.vue";
 
 export default {
   name: "Services",
-  components: { Breadcrumbs, Section, SearchBlock },
+  components: { Breadcrumbs, Section, SearchBlock, Options },
   data() {
     const breadcrumbsArray = [
       {
@@ -34,6 +35,8 @@ export default {
     </Section>
 
     <SearchBlock title="Поиск по услугам" />
+
+    <Options />
   </div>
 </template>
 

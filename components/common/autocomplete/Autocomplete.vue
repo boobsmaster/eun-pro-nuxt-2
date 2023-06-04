@@ -8,7 +8,7 @@ export default {
   <div class="autocomplete">
     <input placeholder="Найти услугу" class="autocomplete__input" type="text" />
     <ul class="autocomplete__options">
-      <li class="autocomplete__options-item">azaza</li>
+      <!-- <li class="autocomplete__options-item">azaza</li> -->
     </ul>
   </div>
 </template>
