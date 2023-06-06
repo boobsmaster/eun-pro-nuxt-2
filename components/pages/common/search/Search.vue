@@ -9,8 +9,8 @@ export default {
   props: {
     title: { type: String, required: true },
   },
+  emits: ["search"],
   data() {
-    const value = "";
     const options = [
       {
         name: "Строительная экспертиза для суда	",
@@ -171,10 +171,17 @@ export default {
       // "Обмер квартир и помещений",
       // "Приемка квартиры в новостройке",
     ];
+    const searchValue = "";
 
     return {
       options,
+      searchValue,
     };
+  },
+  methods: {
+    setSearchValue(value) {
+      this.searchValue = value;
+    },
   },
 };
 </script>
@@ -182,17 +189,19 @@ export default {
 <template>
   <div class="search">
     <div class="search__container">
-      <h2 class="search__title">{{ title }}</h2>
+      <h2 class="search__title">
+        {{ title }}
+      </h2>
 
       <div class="search__input">
         <div class="search__field">
-          <Autocomplete :options="options" />
+          <Autocomplete :options="options" @update="setSearchValue" />
         </div>
 
-        <div class="search__button">
+        <div @click="$emit('search', searchValue)" class="search__button">
           <Button>
             <Icon name="search" class="search__button-icon" />
-            <span class="search__button-text">Поиск</span>
+            <span class="search__button-text"> Поиск </span>
           </Button>
         </div>
       </div>

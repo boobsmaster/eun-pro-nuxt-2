@@ -6,11 +6,12 @@ export default {
   props: {
     options: { type: Array, required: true },
   },
+  emits: ["update"],
   data(props) {
     const currentOptions = props.options;
     const value = "";
     const isOpen = false;
-    const results = [];
+    const results = currentOptions;
 
     return {
       results,
@@ -33,6 +34,8 @@ export default {
     },
     onChange() {
       this.filterResults();
+
+      this.$emit("update", this.value);
     },
   },
   components: { Icon },
@@ -57,23 +60,17 @@ export default {
       ]"
     >
       <li
-        v-if="!results"
-        v-for="item in currentOptions"
-        class="autocomplete__options-item"
-      >
-        <Icon name="arrow-right-test" class="autocomplete__options-item-icon" />
-        <span class="autocomplete__options-item-text">{{ item.name }}</span>
-        <NuxtLink :to="item.path" class="autocomplete__options-item-link" />
-      </li>
-      <li
         v-if="results"
         v-for="item in results"
         class="autocomplete__options-item"
       >
         <Icon name="arrow-right-test" class="autocomplete__options-item-icon" />
-        <span class="autocomplete__options-item-text">{{ item.name }}</span>
+        <span class="autocomplete__options-item-text">
+          {{ item.name }}
+        </span>
         <NuxtLink :to="item.path" class="autocomplete__options-item-link" />
       </li>
+
       <li v-if="results.length === 0" class="autocomplete__options-item">
         <span class="autocomplete__options-item-text">ничего не найдено</span>
       </li>

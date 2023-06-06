@@ -67,19 +67,17 @@ export default {
   }
 
   &__list {
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    row-gap: 10px;
-    flex-flow: wrap; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: repeat(6, 1fr); */
-    grid-column-gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 10px;
+    grid-column-gap: 30px;
+
+    @include mx.tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @include mx.desktop {
-      /* column-gap: 30px; */
+      grid-template-columns: repeat(3, 1fr);
       max-height: 172px;
     }
   }

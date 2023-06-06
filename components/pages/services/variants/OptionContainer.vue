@@ -2,6 +2,10 @@
 import { PropType } from "vue";
 import OptionsItemVue, { OptionLinkType } from "./OptionsItem.vue";
 
+import OptionContainer from "./OptionContainer.vue";
+import AppConsultation from "../../main/consultation/AppConsultation.vue";
+import ConsultationForm from "~/components/pages/common/consultationForm/ConsultationForm.vue";
+
 export type OptionItemType = {
   title: string;
   list: OptionLinkType[];
@@ -14,7 +18,12 @@ export default {
     title: { type: String, required: true },
     number: { type: String, required: true },
   },
-  components: { OptionsItemVue },
+  components: {
+    OptionContainer,
+    AppConsultation,
+    ConsultationForm,
+    OptionsItemVue,
+  },
 };
 </script>
 
