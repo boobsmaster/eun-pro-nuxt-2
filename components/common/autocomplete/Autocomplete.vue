@@ -1,4 +1,5 @@
 <script>
+import { ref } from "vue";
 import Icon from "../icon/Icon.vue";
 
 export default {
@@ -6,17 +7,19 @@ export default {
   props: {
     options: { type: Array, required: true },
   },
-  emits: ["update"],
+  emits: ["update", "search"],
   data(props) {
     const currentOptions = props.options;
     const value = "";
     const isOpen = false;
+    const inputRef = ref(null);
     const results = currentOptions;
 
     return {
-      results,
       value,
       isOpen,
+      results,
+      inputRef,
       currentOptions,
     };
   },
@@ -26,6 +29,13 @@ export default {
     },
     close() {
       this.isOpen = false;
+    },
+    onEnterKeyPress() {
+      this.isOpen = false;
+
+      this.$refs.inputRef.blur();
+
+      this.$emit("search");
     },
     filterResults() {
       this.results = this.currentOptions.filter((item) => {
@@ -43,14 +53,15 @@ export default {
 </script>
 
 <template>
-  <div class="autocomplete">
+  <div class="autocomplete" v-click-outside="close">
     <input
+      ref="inputRef"
       placeholder="Найти услугу"
       class="autocomplete__input"
       type="text"
+      v-on:keyup.enter="onEnterKeyPress"
       @input="onChange"
       @focus="open"
-      @blur="close"
       v-model="value"
     />
     <ul

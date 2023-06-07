@@ -1,3 +1,18 @@
+<script>
+export default {
+  name: "AppServicesMenu",
+  data() {
+    const mobileAccordionList = [
+      {
+        name: "",
+        link: "",
+      },
+    ];
+    return {};
+  },
+};
+</script>
+
 <template>
   <section class="services-menu">
     <div class="services-menu__container services-menu__container_mobile">
@@ -24,6 +39,7 @@
               <h4 class="services-menu__accordion-content-header-title">
                 Наши услуги
               </h4>
+
               <div class="services-menu__accordion-content-header-link">
                 <img
                   class="services-menu__accordion-content-header-link-icon"
@@ -39,21 +55,26 @@
                 ></a>
               </div>
             </header>
+
+            <!-- Accordion -->
             <div class="services-menu__accordion-content-accordion">
               <label
                 class="services-menu__accordion-content-accordion-label"
                 for="sercices-mobile"
-              ></label>
+              />
               <input
                 class="services-menu__accordion-content-accordion-input"
                 type="checkbox"
                 id="sercices-mobile"
               />
+
               <header class="services-menu__accordion-content-accordion-header">
                 <span
                   class="services-menu__accordion-content-accordion-header-number"
-                  >0.1</span
-                ><span
+                >
+                  0.1
+                </span>
+                <span
                   class="services-menu__accordion-content-accordion-header-title"
                   >Экспертиза</span
                 ><img
@@ -62,6 +83,7 @@
                   alt=""
                 />
               </header>
+
               <div class="services-menu__accordion-content-accordion-list">
                 <div
                   class="services-menu__accordion-content-accordion-list-item"
@@ -182,6 +204,8 @@
                 </div>
               </div>
             </div>
+            <!-- Accordion -->
+
             <div class="services-menu__accordion-content-accordion">
               <label
                 class="services-menu__accordion-content-accordion-label"
@@ -1444,12 +1468,6 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "AppServicesMenu",
-};
-</script>
-
 <style lang="scss" scoped>
 @use "@/assets/scss/styles/mixins" as ut;
 @use "@/assets/scss/styles/variables" as vars;
@@ -1462,14 +1480,12 @@ export default {
   height: 100%;
   background: #342633;
   overflow: auto;
-  z-index: 9999;
+  z-index: 2;
 
   @include ut.tablet {
     top: 84px;
     background-color: #291f29;
   }
-
-  display: none;
 
   &_active {
     display: flex;

@@ -195,7 +195,11 @@ export default {
 
       <div class="search__input">
         <div class="search__field">
-          <Autocomplete :options="options" @update="setSearchValue" />
+          <Autocomplete
+            :options="options"
+            @search="$emit('search', searchValue)"
+            @update="setSearchValue"
+          />
         </div>
 
         <div @click="$emit('search', searchValue)" class="search__button">

@@ -6,25 +6,7 @@ import Breadcrumbs from "~/components/common/breadcrumbs/Breadcrumbs.vue";
 import OptionContainer from "~/components/pages/services/variants/OptionContainer.vue";
 import AppConsultation from "~/components/pages/main/consultation/AppConsultation.vue";
 import ConsultationForm from "~/components/pages/common/consultationForm/ConsultationForm.vue";
-
-const testArray = [
-  {
-    title: "",
-    number: "",
-    list: [
-      {
-        title: "",
-        list: [
-          // надо искать в этом массиве, но так же возвращать все вышестоящие данные
-          {
-            name: "",
-            path: "",
-          },
-        ],
-      },
-    ],
-  },
-];
+import AppServicesMenu from "../main/services-menu/AppServicesMenu.vue";
 
 export default {
   name: "Services",
@@ -35,6 +17,7 @@ export default {
     OptionContainer,
     AppConsultation,
     ConsultationForm,
+    AppServicesMenu,
   },
   data() {
     const containersList = [
@@ -536,7 +519,7 @@ export default {
       this.isTouched = true;
 
       if (value === "") {
-        this.results = [];
+        this.results = this.containersList;
       } else {
         const filteredArray = this.containersList.map((element1) => {
           const filtered = element1.list.map((item) => {
@@ -575,6 +558,7 @@ export default {
 
 <template>
   <div class="services">
+    <AppServicesMenu></AppServicesMenu>
     <Section>
       <Breadcrumbs :links="breadcrumbsArray" />
     </Section>
@@ -597,7 +581,10 @@ export default {
           По вашему запросу не найдено результатов
         </span>
       </div>
-      <ConsultationForm />
+
+      <div class="options__form">
+        <ConsultationForm />
+      </div>
     </div>
   </div>
 </template>
@@ -642,6 +629,7 @@ export default {
     width: 100%;
     height: 300px;
   }
+
   &__placeholder-text {
     font-weight: 700;
     font-size: 20px;
@@ -650,6 +638,18 @@ export default {
     text-align: center;
 
     color: #342633;
+  }
+
+  &__form {
+    margin: 0 0 -20px 0;
+
+    @include mx.tablet {
+      margin: 0 0 -8px 0px;
+    }
+
+    @include mx.desktop {
+      margin: 0 0 43px 0px;
+    }
   }
 }
 </style>
