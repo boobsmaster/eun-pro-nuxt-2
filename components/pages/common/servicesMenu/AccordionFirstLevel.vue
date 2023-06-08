@@ -1,16 +1,9 @@
 <script>
-// title: [
-//   {
-//     title: '',
-//     list: [
-//       {''}
-//     ]
-//   }
-// ]
-import Icon from "~/components/common/icon/Icon.vue";
+import Icon from '~/components/common/icon/Icon.vue'
+import AccordionSecondLevel from './AccordionSecondLevel.vue'
 
 export default {
-  name: "MobileAccordion",
+  name: 'AccordionFirstLevel',
   props: {
     number: { type: String, required: true },
     title: { type: String, required: true },
@@ -18,20 +11,26 @@ export default {
   },
   components: {
     Icon,
+    AccordionSecondLevel,
   },
   data() {
-    const isOpen = false;
+    const isOpen = false
 
     return {
       isOpen,
-    };
+    }
   },
-};
+  methods: {
+    changeIsOpen() {
+      this.isOpen = !this.isOpen
+    },
+  },
+}
 </script>
 
 <template>
-  <div class="accordion">
-    <div class="accordion__header">
+  <div :class="['accordion', { ['accordion_open']: isOpen }]">
+    <div @click="changeIsOpen" class="accordion__header">
       <span class="accordion__header-number">
         {{ number }}
       </span>
@@ -42,24 +41,39 @@ export default {
     </div>
 
     <div class="accordion__list">
-      <!-- level 3 accordion -->
-      <div class="accordion__item">
-        <Icon name="link-arrow-right" class="accordion__item-icon" />
-        <a class="accordion__item-link" href="">Строительная экспертиза</a>
-      </div>
+      <AccordionSecondLevel v-for="item in list" :key="item.name" :list="item.list" :title="item.title" />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/mixins" as ut;
-@use "@/assets/scss/styles/variables" as vars;
+@use '@/assets/scss/styles/mixins' as ut;
+@use '@/assets/scss/styles/variables' as vars;
 .accordion {
   position: relative;
 
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  &_open {
+    .accordion__header-icon {
+      transform: rotate(-90deg);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .accordion__list {
+      max-height: 214px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding-bottom: 40px;
+      transition: max-height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+      &::after {
+        display: flex;
+      }
+    }
+  }
 
   &__header {
     display: flex;
@@ -126,7 +140,7 @@ export default {
 
     &::after {
       display: none;
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -139,11 +153,7 @@ export default {
 
       @include ut.tablet {
         max-width: 437px;
-        background: linear-gradient(
-          180deg,
-          rgba(41, 31, 41, 0) 0%,
-          #291f29 100%
-        );
+        background: linear-gradient(180deg, rgba(41, 31, 41, 0) 0%, #291f29 100%);
       }
 
       @include ut.desktop {

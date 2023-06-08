@@ -1,44 +1,571 @@
 <script>
+import Icon from '~/components/common/icon/Icon.vue'
+import AccordionFirstLevel from './AccordionFirstLevel.vue'
+import AccordionSecondLevel from './AccordionSecondLevel.vue'
+
 export default {
-  name: "AppServicesMenu",
+  name: 'AppServicesMenu',
   data() {
     const mobileAccordionList = [
       {
-        name: "",
-        link: "",
+        number: '0.1',
+        title: 'Экспертиза',
+        list: [
+          {
+            title: 'Строительная экспертиза',
+            list: [
+              {
+                name: 'Строительная экспертиза для суда	',
+                path: '/',
+              },
+              {
+                name: 'Рецензия на строительную экспертизу',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза перекрытий',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза фундамента',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза строительных материалов',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза песка',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза кирпича',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза бетона',
+                path: '/',
+              },
+              {
+                name: 'Испытание арматуры',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза стяжки пола',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза парковки',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза дымовых труб',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза стен',
+                path: '/',
+              },
+
+              {
+                name: 'Экспертиза окон',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза дверей',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза фасадов',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза балкона (частота за год)',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза лестницы',
+                path: '/',
+              },
+              {
+                name: 'Инженерно техническая экспертиза',
+                path: '/',
+              },
+            ],
+          },
+
+          {
+            title: 'Экспертиза зданий и сооружений',
+            list: [
+              {
+                name: 'Тепловизионное обследование',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза капитальности',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза промышленной безопасности',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза колонн',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза металлоконструкций',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза подвала',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза железобетонных конструкций',
+                path: '/',
+              },
+              {
+                name: 'Проект перепланировки нежилого помещения',
+                path: '/',
+              },
+              {
+                name: 'Проектирование зданий и сооружений',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза светильников',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза промышленной безопасности зданий и сооружений',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Экспертиза инженерных коммуникаций',
+            list: [
+              {
+                name: 'Экспертиза системы отопления',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза канализации',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза трубопроводов',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза водоснабжения',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза вентиляции',
+                path: '/',
+              },
+              {
+                name: 'Видеодиагностика канализации',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Экспертиза квартиры для суда',
+            list: [
+              {
+                name: 'Экспертиза после залива квартиры',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза горячей воды',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза сантехники',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза электросчетчика',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза перепланировки квартиры',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза пола в квартире',
+                path: '/',
+              },
+              {
+                name: 'Микологическая экспертиза',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза счетчиков воды',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза счетчика газа',
+                path: '/',
+              },
+              {
+                name: 'Замер радиации в квартире',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза электромагнитного излучения',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза шума',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза ремонта квартиры',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза шумоизоляции',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза квартиры в новостройке',
+                path: '/',
+              },
+              {
+                name: 'Экологическая экспертиза квартиры',
+                path: '/',
+              },
+              {
+                name: 'Согласование перепланировки квартиры под ключ',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза натяжных потолков',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза электропроводки',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Экспертиза дома',
+            list: [
+              {
+                name: 'Экспертиза деревянного дома',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза каркасного дома',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза кровли крыши',
+                path: '/',
+              },
+              {
+                name: 'Экспертиза кирпичной кладки',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Землеустроительная экспертиза',
+            list: [
+              {
+                name: 'Геология участка под строительство',
+                path: '/',
+              },
+              {
+                name: 'Геотехнический мониторинг',
+                path: '/',
+              },
+              {
+                name: 'Инженерно экологические изыскания',
+                path: '/',
+              },
+              {
+                name: 'Инженерно геологические изыскания',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Геодезические работы',
+            list: [
+              {
+                name: 'Геология участка под строительство',
+                path: '/',
+              },
+              {
+                name: 'Геотехнический мониторинг',
+                path: '/',
+              },
+              {
+                name: 'Инженерно экологические изыскания',
+                path: '/',
+              },
+              {
+                name: 'Инженерно геологические изыскания',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Пожарная экспертиза',
+            list: [
+              {
+                name: '	Расчет пожарных рисков',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Экологическая экспертиза',
+            list: [
+              // {
+              //   name: "	Расчет пожарных рисков",
+              //   path: "/",
+              // },
+            ],
+          },
+          {
+            title: 'Бухгалтерская экспертиза',
+            list: [
+              {
+                name: 'Финансово экономическая экспертиза',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Техническая экспертиза',
+            list: [
+              {
+                name: 'Экспертиза оборудования',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Техническая экспертиза',
+            list: [
+              {
+                name: 'Экспертиза оборудования',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Экспертиза рекламных конструкций',
+            list: [],
+          },
+          {
+            title: 'Экспертиза дорог и дорожных покрытий',
+            list: [],
+          },
+          {
+            title: 'Экспертиза бани (Частота за год)',
+            list: [],
+          },
+          {
+            title: 'Искусствоведческая экспертиза',
+            list: [],
+          },
+          {
+            title: 'Электротехническая экспертиза',
+            list: [],
+          },
+        ],
       },
-    ];
-    return {};
+      {
+        number: '0.2',
+        title: 'Оценка',
+        list: [
+          {
+            title: 'Независимая оценка квартиры',
+            list: [
+              {
+                name: 'Обмер квартир и помещений',
+                path: '/',
+              },
+              {
+                name: 'Приемка квартиры в новостройке',
+                path: '/',
+              },
+            ],
+          },
+          {
+            title: 'Оценка ущерба после пожара',
+            list: [],
+          },
+          {
+            title: 'Оценка стоимости земельного участка',
+            list: [],
+          },
+          {
+            title: 'Оценка ноу хау',
+            list: [],
+          },
+          {
+            title: 'Оценка патента',
+            list: [],
+          },
+          {
+            title: 'Оценка товарного знака',
+            list: [],
+          },
+          {
+            title: 'Оценка стоимости бизнеса',
+            list: [],
+          },
+          {
+            title: 'Оценка стоимости недвижимости',
+            list: [],
+          },
+          {
+            title: 'Оценка оборудования',
+            list: [],
+          },
+          {
+            title: 'Оценка коммерческой недвижимости',
+            list: [],
+          },
+          {
+            title: 'Оценка аренды недвижимости',
+            list: [],
+          },
+        ],
+      },
+      {
+        number: '0.3',
+        title: 'Аудит',
+        list: [
+          {
+            title: 'Пожарный аудит',
+            list: [],
+          },
+          {
+            title: 'Строительный аудит',
+            list: [],
+          },
+          {
+            title: 'Экологический аудит',
+            list: [],
+          },
+          {
+            title: 'Юридические услуги',
+            list: [],
+          },
+          {
+            title: 'Оспаривание кадастровой стоимости',
+            list: [],
+          },
+          {
+            title: 'Юридическая экспертиза договора',
+            list: [],
+          },
+          {
+            title: 'Рецензия на экспертизу',
+            list: [],
+          },
+        ],
+      },
+    ]
+
+    const menuLinks = [
+      {
+        name: 'Прайс-лист',
+        link: '/',
+      },
+      {
+        name: 'O компании',
+        link: '/',
+      },
+      {
+        name: 'Блог',
+        link: '/',
+      },
+      {
+        name: 'Вакансии',
+        link: '/',
+      },
+      {
+        name: 'Вопрос/ответ',
+        link: '/',
+      },
+      {
+        name: 'Наши работы',
+        link: '/',
+      },
+      {
+        name: 'Наши сотрудники',
+        link: '/',
+      },
+      {
+        name: 'Наши реквизиты',
+        link: '/',
+      },
+      {
+        name: 'Оборудование',
+        link: '/',
+      },
+      {
+        name: 'Контакты',
+        link: '/',
+      },
+      {
+        name: 'Отзывы',
+        link: '/',
+      },
+      {
+        name: 'Наши сертификаты',
+        link: '',
+      },
+      {
+        name: 'Гарантии',
+        link: '',
+      },
+      {
+        name: 'Оплата',
+        link: '',
+      },
+      {
+        name: 'Мы в СМИ',
+        link: '',
+      },
+    ]
+    return {
+      mobileAccordionList,
+      menuLinks,
+    }
   },
-};
+  components: { Icon, AccordionFirstLevel, AccordionSecondLevel },
+}
 </script>
 
 <template>
   <section class="services-menu">
+    <!-- MOBILE -->
     <div class="services-menu__container services-menu__container_mobile">
       <div class="services-menu__title">Меню</div>
       <div class="services-menu__links-list">
         <div class="services-menu__accordion">
           <label class="services-menu__accordion-label" for="services"></label>
-          <input
-            class="services-menu__accordion-input"
-            type="checkbox"
-            id="services"
-          />
+          <input class="services-menu__accordion-input" type="checkbox" id="services" />
           <header class="services-menu__accordion-header">
             <div class="services-menu__accordion-header-text">Наши услуги</div>
-            <img
-              class="services-menu__accordion-header-icon"
-              src="~/assets/icons/accordion-arrow.svg"
-              alt=""
-            />
+            <img class="services-menu__accordion-header-icon" src="~/assets/icons/accordion-arrow.svg" alt="" />
           </header>
 
           <div class="services-menu__accordion-content">
             <header class="services-menu__accordion-content-header">
-              <h4 class="services-menu__accordion-content-header-title">
-                Наши услуги
-              </h4>
+              <h4 class="services-menu__accordion-content-header-title">Наши услуги</h4>
 
               <div class="services-menu__accordion-content-header-link">
                 <img
@@ -46,1420 +573,84 @@ export default {
                   src="~/assets/icons/accordion-arrow.svg"
                   alt=""
                 />
-                <span class="services-menu__accordion-content-header-link-text"
-                  >Все услуги</span
-                >
-                <a
-                  class="services-menu__accordion-content-header-link-source"
-                  href=""
-                ></a>
+                <span class="services-menu__accordion-content-header-link-text">Все услуги</span>
+                <a class="services-menu__accordion-content-header-link-source" href=""></a>
               </div>
             </header>
 
-            <!-- Accordion -->
-            <div class="services-menu__accordion-content-accordion">
-              <label
-                class="services-menu__accordion-content-accordion-label"
-                for="sercices-mobile"
-              />
-              <input
-                class="services-menu__accordion-content-accordion-input"
-                type="checkbox"
-                id="sercices-mobile"
-              />
-
-              <header class="services-menu__accordion-content-accordion-header">
-                <span
-                  class="services-menu__accordion-content-accordion-header-number"
-                >
-                  0.1
-                </span>
-                <span
-                  class="services-menu__accordion-content-accordion-header-title"
-                  >Экспертиза</span
-                ><img
-                  class="services-menu__accordion-content-accordion-header-icon"
-                  src="~/assets/icons/accordion-arrow.svg"
-                  alt=""
-                />
-              </header>
-
-              <div class="services-menu__accordion-content-accordion-list">
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Строительная экспертиза</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза зданий и сооружений</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза инженерных коммуникаций</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза квартиры для суда</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза квартиры для суда</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза дома</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Землеустроительная экспертиза</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Геодезические работы</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Геодезические работы</a
-                  >
-                </div>
-              </div>
-            </div>
-            <!-- Accordion -->
-
-            <div class="services-menu__accordion-content-accordion">
-              <label
-                class="services-menu__accordion-content-accordion-label"
-                for="rate-mobile"
-              ></label>
-              <input
-                class="services-menu__accordion-content-accordion-input"
-                type="checkbox"
-                id="rate-mobile"
-              />
-              <header class="services-menu__accordion-content-accordion-header">
-                <span
-                  class="services-menu__accordion-content-accordion-header-number"
-                  >0.2</span
-                ><span
-                  class="services-menu__accordion-content-accordion-header-title"
-                  >Оценка</span
-                ><img
-                  class="services-menu__accordion-content-accordion-header-icon"
-                  src="~/assets/icons/accordion-arrow.svg"
-                  alt=""
-                />
-              </header>
-              <div class="services-menu__accordion-content-accordion-list">
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Строительная экспертиза</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза зданий и сооружений</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза инженерных коммуникаций</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза квартиры для суда</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза квартиры для суда</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза дома</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Землеустроительная экспертиза</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Геодезические работы</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Геодезические работы</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="services-menu__accordion-content-accordion">
-              <label
-                class="services-menu__accordion-content-accordion-label"
-                for="audit-mobile"
-              ></label>
-              <input
-                class="services-menu__accordion-content-accordion-input"
-                type="checkbox"
-                id="audit-mobile"
-              />
-              <header class="services-menu__accordion-content-accordion-header">
-                <span
-                  class="services-menu__accordion-content-accordion-header-number"
-                  >0.3</span
-                ><span
-                  class="services-menu__accordion-content-accordion-header-title"
-                  >Аудит</span
-                ><img
-                  class="services-menu__accordion-content-accordion-header-icon"
-                  src="~/assets/icons/accordion-arrow.svg"
-                  alt=""
-                />
-              </header>
-              <div class="services-menu__accordion-content-accordion-list">
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Строительная экспертиза</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза зданий и сооружений</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза инженерных коммуникаций</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза квартиры для суда</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза квартиры для суда</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Экспертиза дома</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Землеустроительная экспертиза</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Геодезические работы</a
-                  >
-                </div>
-                <div
-                  class="services-menu__accordion-content-accordion-list-item"
-                >
-                  <img
-                    class="services-menu__accordion-content-accordion-list-item-icon"
-                    src="~/assets/icons/link-arrow-right.svg"
-                    alt=""
-                  /><a
-                    class="services-menu__accordion-content-accordion-list-item-link"
-                    href=""
-                    >Геодезические работы</a
-                  >
-                </div>
-              </div>
-            </div>
+            <AccordionFirstLevel
+              v-for="item in mobileAccordionList"
+              :list="item.list"
+              :title="item.title"
+              :number="item.number"
+              :key="item.number"
+            />
           </div>
         </div>
-        <a class="services-menu__link" href="">Прайс-лист</a
-        ><a class="services-menu__link" href="">О компании</a
-        ><a class="services-menu__link" href="">Блог</a
-        ><a class="services-menu__link" href="">Вакансии</a
-        ><a class="services-menu__link" href="">Вопрос/ответ</a
-        ><a class="services-menu__link" href="">Наши работы</a
-        ><a class="services-menu__link" href="">Наши сотрудники</a
-        ><a class="services-menu__link" href="">Наши реквизиты</a
-        ><a class="services-menu__link" href="">Оборудование</a
-        ><a class="services-menu__link" href="">Контакты</a
-        ><a class="services-menu__link" href="">Отзывы</a
-        ><a class="services-menu__link" href="">Наши сертификаты</a
-        ><a class="services-menu__link" href="">Гарантии</a
-        ><a class="services-menu__link" href="">Оплата</a
-        ><a class="services-menu__link" href="">Мы в СМИ</a>
+
+        <a v-for="item in menuLinks" class="services-menu__link" :href="item.link">
+          {{ item.name }}
+        </a>
       </div>
     </div>
+
+    <!-- TABLET -->
     <div class="services-menu__container services-menu__container_tablet">
+      <!-- SIDEBAR -->
       <div class="services-menu__sidebar">
         <h3 class="services-menu__sidebar-title">Меню</h3>
         <div class="services-menu__sidebar-appendix"></div>
+
         <div class="services-menu__sidebar-list">
-          <a class="services-menu__sidebar-list-link" href=""> Наши услуги </a>
-          <a class="services-menu__sidebar-list-link" href="">Прайс-лист</a
-          ><a class="services-menu__sidebar-list-link" href="">О компании</a
-          ><a class="services-menu__sidebar-list-link" href="">Блог</a
-          ><a class="services-menu__sidebar-list-link" href="">Вакансии</a
-          ><a class="services-menu__sidebar-list-link" href="">Вопрос/ответ</a
-          ><a class="services-menu__sidebar-list-link" href="">Наши работы</a
-          ><a class="services-menu__sidebar-list-link" href=""
-            >Наши сотрудники</a
-          ><a class="services-menu__sidebar-list-link" href="">Наши реквизиты</a
-          ><a class="services-menu__sidebar-list-link" href="">Оборудование</a
-          ><a class="services-menu__sidebar-list-link" href="">Контакты</a
-          ><a class="services-menu__sidebar-list-link" href="">Отзывы</a
-          ><a class="services-menu__sidebar-list-link" href=""
-            >Наши сертификаты</a
-          ><a class="services-menu__sidebar-list-link" href="">Гарантии</a
-          ><a class="services-menu__sidebar-list-link" href="">Оплата</a
-          ><a class="services-menu__sidebar-list-link" href="">Мы в сми</a>
+          <a v-for="item in menuLinks" class="services-menu__sidebar-list-link" :href="item.link">{{ item.name }}</a>
         </div>
         <button class="services-menu__sidebar-button">
           Консультация<a class="services-menu__sidebar-button-link" href=""></a>
         </button>
       </div>
+      <!-- SIDEBAR END -->
+
       <div class="services-menu__content">
         <header class="services-menu__accordion-content-header">
-          <h4 class="services-menu__accordion-content-header-title">
-            Наши услуги
-          </h4>
+          <h4 class="services-menu__accordion-content-header-title">Наши услуги</h4>
           <div class="services-menu__accordion-content-header-link">
-            <img
-              class="services-menu__accordion-content-header-link-icon"
-              src="~/assets/icons/accordion-arrow.svg"
-              alt=""
-            /><span class="services-menu__accordion-content-header-link-text"
-              >Все услуги</span
-            ><a
-              class="services-menu__accordion-content-header-link-source"
-              href=""
-            ></a>
+            <Icon name="accordion-arrow" class="services-menu__accordion-content-header-link-icon" />
+            <span class="services-menu__accordion-content-header-link-text">Все услуги</span>
+            <a class="services-menu__accordion-content-header-link-source" href=""></a>
           </div>
         </header>
-        <div class="services-menu__accordion-content-accordion">
-          <label
-            class="services-menu__accordion-content-accordion-label"
-            for="sercices-tablet"
-          ></label>
-          <input
-            class="services-menu__accordion-content-accordion-input"
-            type="checkbox"
-            id="sercices-tablet"
-          />
-          <header class="services-menu__accordion-content-accordion-header">
-            <span
-              class="services-menu__accordion-content-accordion-header-number"
-              >0.1</span
-            ><span
-              class="services-menu__accordion-content-accordion-header-title"
-              >Экспертиза</span
-            ><img
-              class="services-menu__accordion-content-accordion-header-icon"
-              src="~/assets/icons/accordion-arrow.svg"
-              alt=""
-            />
-          </header>
-          <div class="services-menu__accordion-content-accordion-list">
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Строительная экспертиза</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза зданий и сооружений</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза инженерных коммуникаций</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза квартиры для суда</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза квартиры для суда</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза дома</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Землеустроительная экспертиза</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Геодезические работы</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Геодезические работы</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="services-menu__accordion-content-accordion">
-          <label
-            class="services-menu__accordion-content-accordion-label"
-            for="rate-tablet"
-          ></label>
-          <input
-            class="services-menu__accordion-content-accordion-input"
-            type="checkbox"
-            id="rate-tablet"
-          />
-          <header class="services-menu__accordion-content-accordion-header">
-            <span
-              class="services-menu__accordion-content-accordion-header-number"
-              >0.2</span
-            ><span
-              class="services-menu__accordion-content-accordion-header-title"
-              >Оценка</span
-            ><img
-              class="services-menu__accordion-content-accordion-header-icon"
-              src="~/assets/icons/accordion-arrow.svg"
-              alt=""
-            />
-          </header>
-          <div class="services-menu__accordion-content-accordion-list">
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Строительная экспертиза</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза зданий и сооружений</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза инженерных коммуникаций</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза квартиры для суда</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза квартиры для суда</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза дома</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Землеустроительная экспертиза</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Геодезические работы</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Геодезические работы</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="services-menu__accordion-content-accordion">
-          <label
-            class="services-menu__accordion-content-accordion-label"
-            for="audit-tablet"
-          ></label>
-          <input
-            class="services-menu__accordion-content-accordion-input"
-            type="checkbox"
-            id="audit-tablet"
-          />
-          <header class="services-menu__accordion-content-accordion-header">
-            <span
-              class="services-menu__accordion-content-accordion-header-number"
-              >0.3</span
-            ><span
-              class="services-menu__accordion-content-accordion-header-title"
-              >Аудит</span
-            ><img
-              class="services-menu__accordion-content-accordion-header-icon"
-              src="~/assets/icons/accordion-arrow.svg"
-              alt=""
-            />
-          </header>
-          <div class="services-menu__accordion-content-accordion-list">
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Строительная экспертиза</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза зданий и сооружений</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза инженерных коммуникаций</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза квартиры для суда</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза квартиры для суда</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Экспертиза дома</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Землеустроительная экспертиза</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Геодезические работы</a
-              >
-            </div>
-            <div class="services-menu__accordion-content-accordion-list-item">
-              <img
-                class="services-menu__accordion-content-accordion-list-item-icon"
-                src="~/assets/icons/link-arrow-right.svg"
-                alt=""
-              /><a
-                class="services-menu__accordion-content-accordion-list-item-link"
-                href=""
-                >Геодезические работы</a
-              >
-            </div>
-          </div>
-        </div>
+
+        <AccordionFirstLevel
+          v-for="item in mobileAccordionList"
+          :list="item.list"
+          :title="item.title"
+          :number="item.number"
+          :key="item.number"
+        />
       </div>
+
+      <!-- DESKTOP -->
       <div class="services-menu__grid">
         <header class="services-menu__accordion-content-header">
-          <h4 class="services-menu__accordion-content-header-title">
-            Наши услуги
-          </h4>
+          <h4 class="services-menu__accordion-content-header-title">Наши услуги</h4>
           <div class="services-menu__accordion-content-header-link">
             <img
               class="services-menu__accordion-content-header-link-icon"
               src="~/assets/icons/accordion-arrow.svg"
               alt=""
-            /><span class="services-menu__accordion-content-header-link-text"
-              >Все услуги</span
-            ><a
-              class="services-menu__accordion-content-header-link-source"
-              href=""
-            ></a>
+            /><span class="services-menu__accordion-content-header-link-text">Все услуги</span
+            ><a class="services-menu__accordion-content-header-link-source" href=""></a>
           </div>
         </header>
-        <div class="services-menu__grid-content">
-          <div class="services-menu__grid-column">
-            <header class="services-menu__grid-column-header">
-              <span class="services-menu__grid-column-header-number">0.1</span
-              ><span class="services-menu__grid-column-header-title"
-                >Экспертиза</span
-              >
-            </header>
-            <div class="services-menu__grid-column-list">
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" />
-                </svg>
-                <a class="services-menu__grid-item-link" href=""
-                  >Строительная экспертиза</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" />
-                </svg>
-                <a class="services-menu__grid-item-link" href=""
-                  >Экспертиза зданий и сооружений</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" />
-                </svg>
 
-                <a class="services-menu__grid-item-link" href=""
-                  >Экспертиза инженерных коммуникаций</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Экспертиза квартиры для суда</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Экспертиза дома</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Землеустроительная экспертиза</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Геодезические работы</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Пожарная экспертиза</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Экологическая экспертиза</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Бухгалтерская экспертиза</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Техническая экспертиза</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Экспертиза рекламных конструкций</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Экспертиза дорог и дорожных покрытий (Частота за год)</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Экспертиза бани (Частота за год)</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Искусствоведческая экспертиза</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Электротехническая экспертиза</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="services-menu__grid-column">
+        <div class="services-menu__grid-content">
+          <div v-for="item in mobileAccordionList" class="services-menu__grid-column">
             <header class="services-menu__grid-column-header">
-              <span class="services-menu__grid-column-header-number">0.2</span
-              ><span class="services-menu__grid-column-header-title"
-                >Оценка</span
-              >
+              <span class="services-menu__grid-column-header-number">{{ item.number }}</span
+              ><span class="services-menu__grid-column-header-title">{{ item.title }}</span>
             </header>
             <div class="services-menu__grid-column-list">
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Независимая оценка квартиры</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оценка ущерба после пожара</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оценка стоимости земельного участка (Частота за год)</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оценка ноу хау</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оценка патента</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оценка товарного знака</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оценка стоимости бизнеса</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оценка стоимости недвижимости</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оценка оборудования</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оценка коммерческой недвижимости</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оценка аренды недвижимости</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="services-menu__grid-column">
-            <header class="services-menu__grid-column-header">
-              <span class="services-menu__grid-column-header-number">0.3</span
-              ><span class="services-menu__grid-column-header-title"
-                >Аудит</span
-              >
-            </header>
-            <div class="services-menu__grid-column-list">
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Пожарный аудит</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Строительный аудит</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Экологический аудит</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Юридические услуги</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Оспаривание кадастровой стоимости</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Юридическая экспертиза договора</a
-                >
-              </div>
-              <div class="services-menu__grid-item">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="services-menu__grid-item-icon"
-                >
-                  <path d="M6 4L10 8L6 12" stroke="#C2D2DF" /></svg
-                ><a class="services-menu__grid-item-link" href=""
-                  >Рецензия на экспертизу</a
-                >
-              </div>
+              <AccordionSecondLevel v-for="item in item.list" :key="item.name" :list="item.list" :title="item.title" />
             </div>
           </div>
         </div>
@@ -1469,8 +660,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/mixins" as ut;
-@use "@/assets/scss/styles/variables" as vars;
+@use '@/assets/scss/styles/mixins' as ut;
+@use '@/assets/scss/styles/variables' as vars;
 
 .services-menu {
   position: fixed;
@@ -1481,6 +672,9 @@ export default {
   background: #342633;
   overflow: auto;
   z-index: 2;
+
+  display: flex;
+  justify-content: center;
 
   @include ut.tablet {
     top: 84px;
@@ -1599,51 +793,8 @@ export default {
         margin-top: 5px;
       }
     }
-
-    &-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      width: 248px;
-
-      &:hover {
-        .services-menu__grid-item-icon {
-          path {
-            stroke: #ffb701;
-
-            transition: stroke 0.3s ease-in-out;
-          }
-        }
-
-        .services-menu__grid-item-link {
-          color: white;
-
-          transition: color 0.3s ease-in-out;
-        }
-      }
-
-      &-icon {
-        flex: 0 0 auto;
-        width: 16px;
-        height: 16px;
-
-        path {
-          transition: stroke 0.3s ease-in-out;
-        }
-      }
-
-      &-link {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.4rem;
-        line-height: 1.6rem;
-
-        color: #898088;
-
-        transition: color 0.3s ease-in-out;
-      }
-    }
   }
+
   &__sidebar {
     position: relative;
     display: flex;
@@ -1764,7 +915,7 @@ export default {
           transition: background-color 0.3s ease-in-out;
         }
 
-        font-family: "Gilroy";
+        font-family: 'Gilroy';
         font-style: normal;
         font-weight: 700;
         font-size: 1.4rem;
@@ -1839,8 +990,7 @@ export default {
       &:checked ~ .services-menu__accordion-content {
         max-height: 100%;
         padding: 20px;
-        transition: max-height 0.3s ease-in-out,
-          background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+        transition: max-height 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
       }
 
       &:checked ~ .question__item-header .question__item-header-text {
@@ -1851,9 +1001,7 @@ export default {
         transition: all 0.3s ease-in-out;
       }
 
-      &:checked
-        ~ .services-menu__accordion-header
-        .services-menu__accordion-header-icon {
+      &:checked ~ .services-menu__accordion-header .services-menu__accordion-header-icon {
         transform: rotate(-90deg);
         transition: all 0.3s ease-in-out;
       }
@@ -1993,8 +1141,7 @@ export default {
             overflow-y: scroll;
             overflow-x: hidden;
             padding-bottom: 40px;
-            transition: max-height 0.3s ease-in-out,
-              background-color 0.3s ease-in-out;
+            transition: max-height 0.3s ease-in-out, background-color 0.3s ease-in-out;
           }
 
           &:checked ~ .services-menu__accordion-content-accordion-list::after {
@@ -2071,7 +1218,7 @@ export default {
 
           &::after {
             display: none;
-            content: "";
+            content: '';
             position: absolute;
             bottom: 0;
             left: 0;
@@ -2084,22 +1231,14 @@ export default {
 
             @include ut.tablet {
               max-width: 437px;
-              background: linear-gradient(
-                180deg,
-                rgba(41, 31, 41, 0) 0%,
-                #291f29 100%
-              );
+              background: linear-gradient(180deg, rgba(41, 31, 41, 0) 0%, #291f29 100%);
             }
 
             @include ut.desktop {
               display: none;
             }
 
-            background: linear-gradient(
-              180deg,
-              rgba(67, 49, 66, 0) 0%,
-              #433142 100%
-            );
+            background: linear-gradient(180deg, rgba(67, 49, 66, 0) 0%, #433142 100%);
           }
 
           &::-webkit-scrollbar {
@@ -2131,7 +1270,7 @@ export default {
             }
 
             &-link {
-              font-family: "Gilroy";
+              font-family: 'Gilroy';
               font-style: normal;
               font-weight: 400;
               font-size: 14px;

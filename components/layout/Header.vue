@@ -1,31 +1,76 @@
+<script lang="ts">
+import ServicesMenu from '../pages/common/servicesMenu/ServicesMenu.vue'
+import ContactsMenu from '~/components/pages/common/contactsMenu/ContactsMenu.vue'
+
+export default {
+  name: 'AppHeader',
+  data() {
+    const isOpenMenu = false
+    const isOpenContacts = false
+    return {
+      isOpenMenu,
+      isOpenContacts,
+    }
+  },
+  methods: {
+    openMenu() {},
+    closeMenu() {
+      this.isOpenMenu = false
+    },
+    changeMenuVisible() {
+      this.isOpenMenu = !this.isOpenMenu
+    },
+    changeContactsVisible() {
+      this.isOpenContacts = !this.isOpenContacts
+    },
+    openContacts() {},
+    closeContacts() {
+      this.isOpenContacts = false
+    },
+  },
+  watch: {
+    isOpenMenu(newValue) {
+      if (newValue) {
+        this.closeContacts()
+        document.documentElement.style.overflow = 'hidden'
+
+        return
+      }
+
+      document.documentElement.style.overflow = 'auto'
+    },
+    isOpenContacts(newValue) {
+      if (newValue) {
+        this.closeMenu()
+
+        document.documentElement.style.overflow = 'hidden'
+        return
+      }
+
+      document.documentElement.style.overflow = 'auto'
+    },
+  },
+  components: { ServicesMenu, ContactsMenu },
+}
+</script>
+
 <template>
   <header class="header">
     <div class="header__content">
-      <button class="header__button header__button_menu">
-        <img
-          class="header__button-icon header__button-icon_menu_close"
-          src="~/assets/icons/header-menu.svg"
-          alt=""
-        /><img
-          class="header__button-icon header__button-icon_menu_open"
-          src="~/assets/icons/close-yellow.svg"
-          alt=""
-        />
+      <button @click="changeMenuVisible" class="header__button header__button_menu">
+        <img v-if="!isOpenMenu" class="header__button-icon" src="~/assets/icons/header-menu.svg" alt="" />
+        <img v-if="isOpenMenu" class="header__button-icon" src="~/assets/icons/close-yellow.svg" alt="" />
       </button>
+
       <div class="header__logo">
         <img src="~/assets/images/header-logo.png" alt="" />
       </div>
-      <button class="header__button header__button_contacts">
-        <img
-          class="header__button-icon header__button-icon_contacts_close"
-          src="~/assets/icons/header-contacts.svg"
-          alt=""
-        /><img
-          class="header__button-icon header__button-icon_contacts_open"
-          src="~/assets/icons/close-grey.svg"
-          alt=""
-        />
+
+      <button @click="changeContactsVisible" class="header__button header__button_contacts">
+        <img v-if="!isOpenContacts" class="header__button-icon" src="~/assets/icons/header-contacts.svg" alt="" />
+        <img v-if="isOpenContacts" class="header__button-icon" src="~/assets/icons/close-grey.svg" alt="" />
       </button>
+
       <div class="header__info">
         <div class="header__info-item header__info-item_mail">
           <div class="header__info-icon">
@@ -57,188 +102,20 @@
           </div>
         </div>
       </div>
+
       <button class="header__button header__button_call">
         <span class="header__button-text">Обратный звонок</span>
       </button>
     </div>
+
+    <ServicesMenu v-if="isOpenMenu" />
+    <ContactsMenu v-if="isOpenContacts" />
   </header>
 </template>
 
-<script lang="ts">
-export class headerHandler {
-  mainContainer: HTMLElement | null = null;
-  menuButton: HTMLButtonElement | null = null;
-  contactsButton: HTMLElement | null = null;
-
-  menuIconOpen: HTMLElement | null = null;
-  menuIconClose: HTMLElement | null = null;
-  contactsIconOpen: HTMLElement | null = null;
-  contactsIconClose: HTMLElement | null = null;
-
-  states = {
-    menuIsOpen: false,
-    contactsIsOpen: false,
-  };
-
-  constructor(element: HTMLElement) {
-    this.mainContainer = element;
-
-    this.menuIconOpen = this.mainContainer.querySelector(
-      ".header__button-icon_menu_open"
-    );
-
-    this.menuIconClose = this.mainContainer.querySelector(
-      ".header__button-icon_menu_close"
-    );
-
-    this.contactsIconOpen = this.mainContainer.querySelector(
-      ".header__button-icon_contacts_open"
-    );
-
-    this.contactsIconClose = this.mainContainer.querySelector(
-      ".header__button-icon_contacts_close"
-    );
-
-    this.menuButton = this.mainContainer.querySelector(".header__button_menu");
-
-    this.contactsButton = this.mainContainer.querySelector(
-      ".header__button_contacts"
-    );
-
-    this.addListeners();
-
-    return this;
-  }
-
-  private addListeners() {
-    this.contactsButton?.addEventListener(
-      "click",
-      this.setOpenContacts.bind(this)
-    );
-
-    this.menuButton?.addEventListener("click", this.setOpenMenu.bind(this));
-  }
-
-  private hideMenuIcon() {
-    if (this.menuIconClose && this.menuIconOpen) {
-      this.menuIconClose.style.display = "flex";
-      this.menuIconOpen.style.display = "none";
-    }
-  }
-
-  private openMenuIcon() {
-    if (this.menuIconClose && this.menuIconOpen) {
-      this.menuIconClose.style.display = "none";
-      this.menuIconOpen.style.display = "flex";
-    }
-  }
-
-  private hideContactsIcon() {
-    if (this.contactsIconClose && this.contactsIconOpen) {
-      this.contactsIconClose.style.display = "flex";
-      this.contactsIconOpen.style.display = "none";
-    }
-  }
-
-  private openContactsIcon() {
-    if (this.contactsIconClose && this.contactsIconOpen) {
-      this.contactsIconClose.style.display = "none";
-      this.contactsIconOpen.style.display = "flex";
-    }
-  }
-
-  private setOpenMenu() {
-    const menu = document.querySelector(".services-menu") as HTMLElement;
-    const contacts = document.querySelector(".contacts") as HTMLElement;
-
-    this.states.menuIsOpen = !this.states.menuIsOpen;
-
-    if (this.states.contactsIsOpen) {
-      contacts.classList.remove("contacts_active");
-      document.body.style.overflow = "auto";
-
-      this.states.contactsIsOpen = false;
-      this.hideContactsIcon();
-    }
-
-    if (this.states.menuIsOpen) {
-      menu.classList.add("services-menu_active");
-
-      this.openMenuIcon();
-
-      document.body.style.overflow = "hidden";
-    } else {
-      menu.classList.remove("services-menu_active");
-
-      this.hideMenuIcon();
-
-      document.body.style.overflow = "auto";
-    }
-  }
-
-  private setOpenContacts() {
-    const menu = document.querySelector(".services-menu") as HTMLElement;
-    const contacts = document.querySelector(".contacts") as HTMLElement;
-
-    this.states.contactsIsOpen = !this.states.contactsIsOpen;
-
-    if (this.states.menuIsOpen) {
-      menu.classList.remove("services-menu_active");
-
-      document.body.style.overflow = "auto";
-
-      this.states.menuIsOpen = false;
-      this.hideMenuIcon();
-
-      if (this.states.contactsIsOpen) {
-        contacts.classList.add("contacts_active");
-
-        document.body.style.overflow = "hidden";
-
-        this.openContactsIcon();
-      } else {
-        contacts.classList.remove("contacts_active");
-
-        this.hideContactsIcon();
-
-        document.body.style.overflow = "auto";
-      }
-    } else {
-      if (this.states.contactsIsOpen) {
-        contacts.classList.add("contacts_active");
-
-        this.openContactsIcon();
-
-        document.body.style.overflow = "hidden";
-      } else {
-        contacts.classList.remove("contacts_active");
-
-        this.hideContactsIcon();
-
-        document.body.style.overflow = "auto";
-      }
-    }
-  }
-}
-
-const initHeader = () => {
-  const header = document.querySelectorAll(".header");
-
-  header.forEach((element) => {
-    new headerHandler(element as HTMLElement);
-  });
-};
-if (process.browser) {
-  window.addEventListener("load", initHeader);
-}
-export default {
-  name: "AppHeader",
-};
-</script>
-
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/mixins" as ut;
-@use "@/assets/scss/styles/variables" as vars;
+@use '@/assets/scss/styles/mixins' as ut;
+@use '@/assets/scss/styles/variables' as vars;
 
 .header {
   display: flex;
