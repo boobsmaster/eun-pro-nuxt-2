@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 import ServicesMenu from '../pages/common/servicesMenu/ServicesMenu.vue'
 import ContactsMenu from '~/components/pages/common/contactsMenu/ContactsMenu.vue'
 
