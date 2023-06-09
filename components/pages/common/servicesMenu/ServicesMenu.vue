@@ -671,7 +671,7 @@ export default {
   height: 100%;
   background: #342633;
   overflow: auto;
-  z-index: 2;
+  z-index: 999;
 
   display: flex;
   justify-content: center;

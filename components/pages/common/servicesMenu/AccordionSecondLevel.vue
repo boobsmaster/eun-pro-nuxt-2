@@ -44,16 +44,6 @@ export default {
 
     <div v-if="list.length > 0" class="accordion__list">
       <div v-for="item in list" class="accordion__item">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="accordion__item-icon"
-        >
-          <path d="M6 4L10 8L6 12" stroke="#C2D2DF" />
-        </svg>
         <a :href="item.path" class="accordion__item-title">{{ item.name }}</a>
       </div>
     </div>
@@ -80,7 +70,7 @@ export default {
       max-height: 214px;
       overflow-y: auto;
       overflow-x: hidden;
-      padding-bottom: 40px;
+      padding-bottom: 15px;
       transition: all 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
       &::after {
@@ -136,38 +126,14 @@ export default {
     flex-direction: column;
     gap: 14px;
 
-    padding-left: 10px;
+    padding-left: 23px;
     margin-right: 10px;
+
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     overflow-x: hidden;
     scrollbar-color: #ffb701 transparent;
-
-    &::after {
-      display: none;
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-
-      z-index: 3;
-      width: 100%;
-      max-width: 276px;
-      height: 100px;
-      pointer-events: none;
-
-      @include ut.tablet {
-        max-width: 437px;
-        background: linear-gradient(180deg, rgba(41, 31, 41, 0) 0%, #291f29 100%);
-      }
-
-      @include ut.desktop {
-        display: none;
-      }
-
-      background: linear-gradient(180deg, rgba(67, 49, 66, 0) 0%, #433142 100%);
-    }
 
     &::-webkit-scrollbar {
       width: 4px;
@@ -207,11 +173,6 @@ export default {
         transition: color 0.3s ease-in-out;
       }
     }
-  }
-
-  &__item-icon {
-    width: 1.6rem;
-    height: 1.6rem;
   }
 
   &__item-title {
