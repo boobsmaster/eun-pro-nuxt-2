@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: "Button",
-};
+  name: 'Button',
+}
 </script>
 
 <template>
@@ -11,8 +11,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/mixins" as mx;
-@use "@/assets/scss/styles/variables" as vars;
+@use '@/assets/scss/styles/mixins' as mx;
+@use '@/assets/scss/styles/variables' as vars;
 
 .button {
   display: flex;
@@ -29,24 +29,27 @@ export default {
   border-radius: 5px;
   background: #ffb701;
 
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 17px;
+  text-transform: uppercase;
 
   transition: background-color vars.$transition-duration ease-in-out;
 
   @include mx.tablet {
     padding: 12px;
-  }
 
-  @include mx.tablet {
     &:hover {
       background: #ffca45;
 
       transition: background-color vars.$transition-duration ease-in-out;
     }
+  }
+
+  @include mx.desktop {
+    font-size: 14px;
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <div>
     <NuxtLink to="/main">Главная</NuxtLink>
     <NuxtLink to="/services">Услуги</NuxtLink>
-    <NuxtLink to="/test">Услуги</NuxtLink>
+    <NuxtLink to="/forms">Формы</NuxtLink>
   </div>
 </template>
 
