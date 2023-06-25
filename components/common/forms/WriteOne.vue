@@ -4,15 +4,52 @@ import Icon from '~/components/common/icon/Icon.vue'
 import FormWrapper from './FormWrapper.vue'
 import Button from '../button/Button.vue'
 import Agreement from './components/Agreement.vue'
+import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
+import { max, min, required, regex } from 'vee-validate/dist/rules'
+
+extend('required', {
+  ...required,
+  message: 'Это поле обязательное!',
+})
+extend('max', {
+  ...max,
+  message: 'Количество симовлов превышает максимально допустимое!',
+})
+extend('min', {
+  ...min,
+  message: 'Менее 5 символов!',
+})
+
+extend('phone', {
+  ...regex,
+  message: 'Введите номер в формате: +7 (999) 999 99 99',
+})
 
 export default {
   name: 'WriteFormOne',
-  components: { Icon, Input, Button, FormWrapper, Agreement },
+  components: { Icon, Input, Button, FormWrapper, Agreement, ValidationProvider, ValidationObserver },
+  emits: ['close'],
+  data() {
+    const formValues = {
+      name: '',
+      number: '',
+    }
+
+    return {
+      formValues,
+    }
+  },
+  methods: {
+    save() {
+      console.log('formValues', this.formValues)
+    },
+  },
 }
 </script>
 
 <template>
   <FormWrapper
+    @close="$emit('close')"
     title="Затрудняетесь c выбором?"
     description="Персональный менеджер свяжется c вами и подготовит для вас предложение."
   >
@@ -25,14 +62,44 @@ export default {
         <img src="~/assets/images/form-director.png" alt="" class="form__description-image" />
       </div>
 
-      <form class="form__content">
-        <Input label="Имя" placeholder="Иван Иванов" />
-        <Input label="Телефон" placeholder="+7 (999) 999 99 99" />
+      <ValidationObserver v-slot="{ handleSubmit }" tag="div">
+        <form @submit.prevent="handleSubmit(save)" class="form__content">
+          <ValidationProvider rules="required|min:5|max:255" v-slot="{ errors, valid, failed }">
+            <Input
+              label="Имя"
+              placeholder="Иван Иванов"
+              :errors="errors"
+              :valid="valid"
+              :failed="failed"
+              v-model="formValues.name"
+              id="name"
+            />
+          </ValidationProvider>
 
-        <Agreement />
+          <ValidationProvider
+            :rules="{
+              required: true,
+              phone: /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/,
+            }"
+            v-slot="{ errors, valid, failed }"
+          >
+            <Input
+              label="Телефон"
+              placeholder="+7 (999) 999 99 99"
+              v-mask="'+7 (###) ###-##-##'"
+              v-model="formValues.number"
+              :errors="errors"
+              :valid="valid"
+              :failed="failed"
+              id="phone"
+            />
+          </ValidationProvider>
 
-        <Button type="submit">Перезвоните мне</Button>
-      </form>
+          <Agreement />
+
+          <Button type="submit" button-type="submit">Перезвоните мне</Button>
+        </form>
+      </ValidationObserver>
     </div>
   </FormWrapper>
 </template>

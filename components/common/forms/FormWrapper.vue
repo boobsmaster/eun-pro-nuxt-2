@@ -6,6 +6,7 @@ import Icon from '~/components/common/icon/Icon.vue'
 export default {
   name: 'WriteFormOne',
   components: { Icon, Input, Button },
+  emits: ['close'],
   props: {
     title: { type: String, required: true },
     description: { type: String, required: true },
@@ -18,7 +19,8 @@ export default {
     <div class="container__header">
       <div class="container__header-controls">
         <h2 class="container__header-title">{{ title }}</h2>
-        <button class="container__header-button">
+
+        <button @click="$emit('close')" class="container__header-button">
           <Icon name="close" class="container__header-icon" />
         </button>
       </div>

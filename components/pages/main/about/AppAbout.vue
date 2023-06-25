@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: "AppAbout",
-};
+  name: 'AppAbout',
+}
 </script>
 
 <template>
@@ -9,86 +9,60 @@ export default {
     <div class="about__wrapper">
       <header class="about__header">
         <div class="about__header-appendix"></div>
-        <h2 class="about__header-title">
-          Оценочная компания "Экспертиза и управление недвижимостью"
-        </h2>
+        <h2 class="about__header-title">Оценочная компания "Экспертиза и управление недвижимостью"</h2>
       </header>
       <div class="about__content">
         <div class="about__statistics">
           <div class="about__statistics-column">
             <div class="about__statistics-item">
               <span class="about__statistics-item-title">1 327</span
-              ><span class="about__statistics-item-subtitle"
-                >Выполненные экспертизы</span
-              >
+              ><span class="about__statistics-item-subtitle">Выполненные экспертизы</span>
             </div>
             <div class="about__statistics-item">
               <span class="about__statistics-item-title">285</span
-              ><span class="about__statistics-item-subtitle"
-                >Довольных клиентов</span
-              >
+              ><span class="about__statistics-item-subtitle">Довольных клиентов</span>
             </div>
             <div class="about__statistics-item">
               <span class="about__statistics-item-title">1 327</span
-              ><span class="about__statistics-item-subtitle"
-                >Выполненные экспертизы</span
-              >
+              ><span class="about__statistics-item-subtitle">Выполненные экспертизы</span>
             </div>
           </div>
           <div class="about__statistics-column">
             <div class="about__statistics-item">
               <span class="about__statistics-item-title">124</span
-              ><span class="about__statistics-item-subtitle"
-                >Судебных экспертиз</span
-              >
+              ><span class="about__statistics-item-subtitle">Судебных экспертиз</span>
             </div>
             <div class="about__statistics-item">
               <span class="about__statistics-item-title">48 </span
-              ><span class="about__statistics-item-subtitle"
-                >Обследование зданий</span
-              >
+              ><span class="about__statistics-item-subtitle">Обследование зданий</span>
             </div>
             <div class="about__statistics-item">
               <span class="about__statistics-item-title">124</span
-              ><span class="about__statistics-item-subtitle"
-                >Судебных экспертиз</span
-              >
+              ><span class="about__statistics-item-subtitle">Судебных экспертиз</span>
             </div>
           </div>
           <div class="about__statistics-column">
             <div class="about__statistics-item">
               <span class="about__statistics-item-title">124</span
-              ><span class="about__statistics-item-subtitle"
-                >Судебных экспертиз</span
-              >
+              ><span class="about__statistics-item-subtitle">Судебных экспертиз</span>
             </div>
             <div class="about__statistics-item">
               <span class="about__statistics-item-title">48</span
-              ><span class="about__statistics-item-subtitle"
-                >Обследование зданий</span
-              >
+              ><span class="about__statistics-item-subtitle">Обследование зданий</span>
             </div>
             <div class="about__statistics-item">
               <span class="about__statistics-item-title">124</span
-              ><span class="about__statistics-item-subtitle"
-                >Судебных экспертиз</span
-              >
+              ><span class="about__statistics-item-subtitle">Судебных экспертиз</span>
             </div>
           </div>
         </div>
         <div class="about__info">
           <div class="about__info-image">
-            <img
-              class="about__info-image-source"
-              src="~/assets/images/tas-agro-mobile.png"
-              alt=""
-            />
+            <img class="about__info-image-source" src="~/assets/images/tas-agro-mobile.png" alt="" />
           </div>
           <div class="about__info-content">
             <span class="about__info-content-title">Бобров Денис Вадимович</span
-            ><span class="about__info-content-subtitle"
-              >Генеральный директор. Кадастровый инженер</span
-            >
+            ><span class="about__info-content-subtitle">Генеральный директор. Кадастровый инженер</span>
           </div>
           <div class="about__info-content-appeal">
             <!-- <div class="about__info-content-appeal-button"> -->
@@ -100,13 +74,7 @@ export default {
               xmlns="http://www.w3.org/2000/svg"
               class="about__info-content-appeal-button"
             >
-              <circle
-                cx="20"
-                cy="20.5"
-                r="19"
-                stroke="#FFB701"
-                stroke-width="2"
-              />
+              <circle cx="20" cy="20.5" r="19" stroke="#FFB701" stroke-width="2" />
               <path
                 d="M23.0408 20.2952L17.9255 16.7145C17.3953 16.3434 16.6667 16.7227 16.6667 17.3699V23.6302C16.6667 24.2774 17.3953 24.6567 17.9255 24.2856L23.0408 20.7048C23.183 20.6053 23.183 20.3948 23.0408 20.2952Z"
                 fill="#FFB701"
@@ -130,23 +98,13 @@ export default {
                 </svg>
               </div> -->
             <!-- </div> -->
-            <span class="about__info-content-appeal-description"
-              >Видеообращение для будущих клиентов</span
-            >
+            <span class="about__info-content-appeal-description">Видеообращение для будущих клиентов</span>
           </div>
           <div class="about__image about__image_tablet">
-            <img
-              class="about__info-image-source"
-              src="~/assets/images/tas-agro-tablet.png"
-              alt=""
-            />
+            <img class="about__info-image-source" src="~/assets/images/tas-agro-tablet.png" alt="" />
           </div>
           <div class="about__image about__image_desktop">
-            <img
-              class="about__info-image-source"
-              src="~/assets/images/tas-agro-desktop.png"
-              alt=""
-            />
+            <img class="about__info-image-source" src="~/assets/images/tas-agro-desktop.png" alt="" />
           </div>
         </div>
       </div>
@@ -155,8 +113,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/mixins" as ut;
-@use "@/assets/scss/styles/variables" as vars;
+@use '@/assets/scss/styles/mixins' as ut;
+@use '@/assets/scss/styles/variables' as vars;
 
 .about {
   position: relative;
@@ -419,9 +377,9 @@ export default {
       padding: 5.8rem 0 0 0;
       height: 100%;
 
+      border: 2px solid rgba(#c2d2df, 0.1);
       border-top: none;
       border-bottom: none;
-      border: 2px solid rgba(#c2d2df, 0.1);
       padding-left: 1.5rem;
       gap: 3rem;
     }

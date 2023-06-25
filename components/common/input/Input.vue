@@ -1,66 +1,90 @@
 <script>
 import Icon from '../icon/Icon.vue'
-import { ValidationProvider } from 'vee-validate'
 
 export default {
   name: 'Input',
-  components: { Icon, ValidationProvider },
+  components: { Icon },
   props: {
+    value: { type: String },
+    id: { type: String },
     label: { type: String },
     error: { type: String },
+    mask: { type: String },
     placeholder: { type: String },
+    required: { type: Boolean },
     type: { type: String, default: 'input' },
+    errors: {
+      type: Array,
+      default: () => [],
+    },
+    dark: {
+      type: String,
+    },
+    dirty: { type: Boolean },
+    valid: { type: Boolean },
+    failed: {
+      type: Boolean,
+      default: false,
+    },
   },
-  data() {
-    const isValid = false
-    const isError = true
-    const value = ''
-
-    return {
-      isValid,
-      isError,
-      value,
-    }
+  computed: {
+    model: {
+      get() {
+        return this.value
+      },
+      set(value) {
+        this.$emit('input', value)
+      },
+    },
   },
   methods: {
-    clear() {},
+    clear() {
+      this.model = ''
+    },
   },
 }
 </script>
 
 <template>
-  <ValidationProvider rules="required" v-slot="{ valid, touched, invalid, errors }">
-    <div class="input">
-      <label class="input__label">{{ label }}</label>
+  <div :class="['input', { ['input_dark']: dark }]">
+    <label :for="id" class="input__label">{{ label }}</label>
 
-      <div
-        :class="[
-          'input__container',
-          { ['input__container_success']: valid && touched },
-          { ['input__container_error']: invalid },
-        ]"
-      >
-        <input v-if="type === 'input'" v-model="value" class="input__field" :placeholder="placeholder" />
-        <textarea
-          v-if="type === 'textarea'"
-          v-model="value"
-          class="input__field input__field_textarea"
-          :placeholder="placeholder"
-        ></textarea>
-        <span class="input__error">
-          {{ errors[0] }}
-        </span>
+    <div
+      :class="[
+        'input__container',
+        { ['input__container_error']: value?.length > 0 && failed },
+        { ['input__container_success']: valid },
+      ]"
+    >
+      <input
+        v-if="type === 'input'"
+        :id="id"
+        v-model="model"
+        v-mask="mask"
+        class="input__field"
+        :placeholder="placeholder"
+      />
 
-        <button v-if="valid && touched" class="input__button">
-          <Icon name="success" class="input__icon" />
-        </button>
+      <textarea
+        v-if="type === 'textarea'"
+        v-model="model"
+        class="input__field input__field_textarea"
+        :placeholder="placeholder"
+      />
 
-        <!-- <button v-if="invalid" class="input__button">
-          <Icon name="delete" class="input__icon" />
-        </button> -->
-      </div>
+      <span v-if="errors" class="input__error">
+        {{ errors[0] }}
+      </span>
+
+      <button v-if="valid" class="input__button">
+        <Icon name="success" class="input__icon" />
+      </button>
+
+      <button @click="clear" v-if="value?.length > 0 && failed" class="input__button">
+        <Icon name="delete" class="input__icon" />
+      </button>
     </div>
-  </ValidationProvider>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -68,6 +92,17 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 5px;
+
+  &_dark {
+    .input__label {
+      color: var(--white, #f3f3f3);
+    }
+
+    .input__field {
+      background-color: #433142;
+      border-color: #898088;
+    }
+  }
 
   &__label {
     font-family: 'Gilroy';

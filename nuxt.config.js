@@ -35,7 +35,7 @@ export default {
   extends: ['prettier'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/dataApi', '~/plugins/clickOutside'],
+  plugins: ['~/plugins/dataApi', '~/plugins/clickOutside', '~/plugins/v-mask.js'],
   rules: {
     'prettier/prettier': ['error'],
     'vue/html-indent': ['error', 4],

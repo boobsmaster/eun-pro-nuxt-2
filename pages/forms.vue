@@ -6,9 +6,11 @@ import WriteTwo from '~/components/common/forms/WriteTwo.vue'
 import Toast from '~/components/common/toasts/Toast.vue'
 
 import WriteThird from '~/components/common/forms/WriteThird.vue'
+import { ValidationProvider } from 'vee-validate'
+
 export default {
   name: 'FormsPage',
-  components: { Input, WriteOne, CookiesToast, Toast, WriteTwo, WriteThird },
+  components: { Input, WriteOne, CookiesToast, Toast, WriteTwo, WriteThird, ValidationProvider },
 }
 </script>
 

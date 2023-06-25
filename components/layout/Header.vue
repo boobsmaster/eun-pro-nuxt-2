@@ -1,4 +1,6 @@
 <script>
+import Modal from '../common/modal/Modal.vue'
+import WriteOne from '../common/forms/WriteOne.vue'
 import ServicesMenu from '../pages/common/servicesMenu/ServicesMenu.vue'
 import ContactsMenu from '~/components/pages/common/contactsMenu/ContactsMenu.vue'
 
@@ -6,14 +8,16 @@ export default {
   name: 'AppHeader',
   data() {
     const isOpenMenu = false
+    const isOpenModal = false
     const isOpenContacts = false
+
     return {
       isOpenMenu,
+      isOpenModal,
       isOpenContacts,
     }
   },
   methods: {
-    openMenu() {},
     closeMenu() {
       this.isOpenMenu = false
     },
@@ -23,7 +27,9 @@ export default {
     changeContactsVisible() {
       this.isOpenContacts = !this.isOpenContacts
     },
-    openContacts() {},
+    changeModalVisible() {
+      this.isOpenModal = !this.isOpenModal
+    },
     closeContacts() {
       this.isOpenContacts = false
     },
@@ -50,7 +56,7 @@ export default {
       document.documentElement.style.overflow = 'auto'
     },
   },
-  components: { ServicesMenu, ContactsMenu },
+  components: { ServicesMenu, ContactsMenu, Modal, WriteOne },
 }
 </script>
 
@@ -103,13 +109,16 @@ export default {
         </div>
       </div>
 
-      <button class="header__button header__button_call">
+      <button @click="changeModalVisible" class="header__button header__button_call">
         <span class="header__button-text">Обратный звонок</span>
       </button>
     </div>
 
     <ServicesMenu v-if="isOpenMenu" />
     <ContactsMenu v-if="isOpenContacts" />
+    <Modal v-if="isOpenModal">
+      <WriteOne @close="changeModalVisible" />
+    </Modal>
   </header>
 </template>
 

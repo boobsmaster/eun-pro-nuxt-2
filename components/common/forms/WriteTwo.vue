@@ -3,30 +3,101 @@ import Input from '../input/Input.vue'
 import Button from '../button/Button.vue'
 import FormWrapper from './FormWrapper.vue'
 import Agreement from './components/Agreement.vue'
+import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
+import { max, min, required, regex } from 'vee-validate/dist/rules'
+
+extend('required', {
+  ...required,
+  message: 'Это поле обязательное!',
+})
+extend('max', {
+  ...max,
+  message: 'Количество симовлов превышает максимально допустимое!',
+})
+extend('min', {
+  ...min,
+  message: 'Менее 5 символов!',
+})
+
+extend('phone', {
+  ...regex,
+  message: 'Введите номер в формате: +7 (999) 999 99 99',
+})
 
 export default {
   name: 'ContactsForm2',
-  components: { FormWrapper, Input, Agreement, Button },
+  components: { FormWrapper, Input, Agreement, Button, ValidationProvider, ValidationObserver },
+  emits: ['close'],
+  data() {
+    const formValues = {
+      name: '',
+      number: '',
+    }
+
+    return {
+      formValues,
+    }
+  },
+  methods: {
+    save() {
+      console.log('formValues', this.formValues)
+    },
+  },
 }
 </script>
 
 <template>
   <FormWrapper
+    @close="$emit('close')"
     title="Мы вам перезвоним"
     description="Оставьте ваши данные и мы свяжемся с вами. Мы не занимаемся рассылкой рекламных сообщений, а так же не передаем контактные данные третьим лицам"
   >
-    <div class="form">
-      <div class="form__content">
-        <Input label="Телефон" placeholder="+7 (999) 999 99 99" class="form__input form__input_number" />
-        <Input label="Имя" placeholder="Иван Иванов" class="form__input form__input_name" />
-      </div>
-      <div class="form__control">
-        <Agreement class="form__agreement" />
-        <div class="form__button">
-          <Button>Задать вопрос</Button>
+    <ValidationObserver v-slot="{ handleSubmit }" tag="div">
+      <form @submit.prevent="handleSubmit(save)" class="form">
+        <div class="form__content">
+          <ValidationProvider
+            :rules="{
+              required: true,
+              phone: /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/,
+            }"
+            class="form__input form__input_number"
+            v-slot="{ errors, valid, failed }"
+          >
+            <Input
+              label="Телефон"
+              placeholder="+7 (999) 999 99 99"
+              v-mask="'+7 (###) ###-##-##'"
+              v-model="formValues.number"
+              :errors="errors"
+              :valid="valid"
+              :failed="failed"
+              id="phone"
+            />
+          </ValidationProvider>
+          <ValidationProvider
+            rules="required|min:5|max:255"
+            v-slot="{ errors, valid, failed }"
+            class="form__input form__input_name"
+          >
+            <Input
+              label="Имя"
+              placeholder="Иван Иванов"
+              :errors="errors"
+              :valid="valid"
+              :failed="failed"
+              v-model="formValues.name"
+              id="name"
+            />
+          </ValidationProvider>
         </div>
-      </div>
-    </div>
+        <div class="form__control">
+          <Agreement class="form__agreement" />
+          <div class="form__button">
+            <Button>Задать вопрос</Button>
+          </div>
+        </div>
+      </form>
+    </ValidationObserver>
   </FormWrapper>
 </template>
 
