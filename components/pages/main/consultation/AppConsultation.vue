@@ -1,56 +1,115 @@
 <script>
+import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
+import { max, min, required, regex } from 'vee-validate/dist/rules'
+
+import Input from '~/components/common/input/Input.vue'
+extend('required', {
+  ...required,
+  message: 'Это поле обязательное!',
+})
+extend('max', {
+  ...max,
+  message: 'Количество симовлов превышает максимально допустимое!',
+})
+extend('min', {
+  ...min,
+  message: 'Менее 5 символов!',
+})
+
+extend('phone', {
+  ...regex,
+  message: 'Введите номер в формате: +7 (999) 999 99 99',
+})
+
 export default {
-  name: "AppConsultation",
-};
+  name: 'AppConsultation',
+  components: {
+    ValidationProvider,
+    ValidationObserver,
+    Input,
+  },
+  data() {
+    const formValues = {
+      name: '',
+      phone: '',
+    }
+
+    return {
+      formValues,
+    }
+  },
+  methods: {
+    save() {
+      console.log('formValues', this.formValues)
+    },
+  },
+}
 </script>
 
 <template>
   <section class="consultation">
     <div class="consultation__container">
       <header class="consultation__header">
-        <span
-          class="consultation__header-title consultation__header-title_regular"
-          >Требуется<span
-            class="consultation__header-title consultation__header-title_bold"
-            >консультация?
-          </span></span
-        >
+        <span class="consultation__header-title consultation__header-title_regular">
+          Требуется
+          <span class="consultation__header-title consultation__header-title_bold"> консультация? </span>
+        </span>
       </header>
-      <form class="consultation__form">
-        <div class="consultation__form-item">
-          <span class="consultation__form-item-title">Телефон</span>
-          <input
-            class="consultation__form-item-input"
-            placeholder="+7 (999) 999 99 99"
-          />
-        </div>
-        <div class="consultation__form-item">
-          <span class="consultation__form-item-title">Имя</span>
-          <input
-            class="consultation__form-item-input"
-            placeholder="Иван Иванов"
-          />
-        </div>
-        <div class="consultation__form-agreement">
-          <img
-            class="consultation__form-agreement-badge"
-            src="~/assets/icons/lock.svg"
-            alt=""
-          /><span class="consultation__form-agreement-description"
-            >Я даю согласие на обработку моих персональных данных</span
-          >
-        </div>
-        <button class="consultation__form-button">
-          <span class="consultation__form-button-text">перезвоните мне</span>
-        </button>
-      </form>
+      <ValidationObserver v-slot="{ handleSubmit }" tag="div">
+        <form @submit.prevent="handleSubmit(save)" class="consultation__form">
+          <div class="consultation__form-item">
+            <ValidationProvider
+              :rules="{
+                required: true,
+                phone: /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/,
+              }"
+              v-slot="{ errors, valid, failed }"
+            >
+              <Input
+                label="Телефон"
+                placeholder="+7 (999) 999 99 99"
+                v-mask="'+7 (###) ###-##-##'"
+                v-model="formValues.phone"
+                :errors="errors"
+                :valid="valid"
+                :failed="failed"
+                :dark="true"
+                id="phone"
+              />
+            </ValidationProvider>
+          </div>
+          <div class="consultation__form-item">
+            <ValidationProvider rules="required|min:5|max:255" v-slot="{ errors, valid, failed }">
+              <Input
+                label="Имя"
+                placeholder="Иван Иванов"
+                :errors="errors"
+                :valid="valid"
+                :failed="failed"
+                :dark="true"
+                v-model="formValues.name"
+                id="name"
+              />
+            </ValidationProvider>
+          </div>
+          <div class="consultation__form-agreement">
+            <img class="consultation__form-agreement-badge" src="~/assets/icons/lock.svg" alt="" /><span
+              class="consultation__form-agreement-description"
+              >Я даю согласие на обработку моих персональных данных</span
+            >
+          </div>
+          <button type="submit" class="consultation__form-button">
+            <span class="consultation__form-button-text">перезвоните мне</span>
+          </button>
+        </form>
+      </ValidationObserver>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/mixins" as ut;
-@use "@/assets/scss/styles/variables" as vars;
+@use '@/assets/scss/styles/mixins' as ut;
+@use '@/assets/scss/styles/variables' as vars;
 
 .consultation {
   display: flex;
@@ -138,7 +197,7 @@ export default {
 
     @include ut.tablet {
       flex-direction: row;
-      align-items: flex-end;
+      align-items: flex-start;
     }
 
     @include ut.desktop {
@@ -189,6 +248,7 @@ export default {
         gap: 0.5rem;
         margin: 0px 0 7px 0;
         flex: 0 0 auto;
+        align-self: center;
       }
 
       @include ut.desktop {
@@ -266,6 +326,7 @@ export default {
         width: 165px;
         margin: 0px 0px 1px -8px;
         padding: 1.2rem;
+        align-self: center;
       }
 
       @include ut.desktop {
@@ -277,7 +338,7 @@ export default {
       // margin: 2px 0px 0px 0;
 
       &-text {
-        font-family: "Gilroy";
+        font-family: 'Gilroy';
         font-style: normal;
         font-weight: 700;
         font-size: 1.2rem;

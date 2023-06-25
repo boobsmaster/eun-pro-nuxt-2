@@ -18,7 +18,7 @@ export default {
       default: () => [],
     },
     dark: {
-      type: String,
+      type: Boolean,
     },
     dirty: { type: Boolean },
     valid: { type: Boolean },
@@ -99,8 +99,9 @@ export default {
     }
 
     .input__field {
+      border: none;
+      color: var(--black-light, #898088);
       background-color: #433142;
-      border-color: #898088;
     }
   }
 
@@ -123,7 +124,7 @@ export default {
 
     &_success {
       .input__field {
-        border-color: #8cba51;
+        border: 1px solid #8cba51;
       }
 
       .input__icon {
@@ -133,7 +134,7 @@ export default {
 
     &_error {
       .input__field {
-        border-color: #fd5e53;
+        border: 1px solid #fd5e53;
       }
 
       .input__icon {
