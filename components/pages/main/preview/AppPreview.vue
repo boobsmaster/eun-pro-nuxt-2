@@ -1,60 +1,120 @@
+<script>
+import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
+import { max, min, required, regex } from 'vee-validate/dist/rules'
+
+import Input from '~/components/common/input/Input.vue'
+extend('required', {
+  ...required,
+  message: 'Это поле обязательное!',
+})
+extend('max', {
+  ...max,
+  message: 'Количество симовлов превышает максимально допустимое!',
+})
+extend('min', {
+  ...min,
+  message: 'Менее 5 символов!',
+})
+
+extend('phone', {
+  ...regex,
+  message: 'Введите номер в формате: +7 (999) 999 99 99',
+})
+export default {
+  components: { ValidationProvider, ValidationObserver, Input },
+  data() {
+    const formValues = {
+      name: '',
+      number: '',
+    }
+
+    return {
+      formValues,
+    }
+  },
+  methods: {
+    save() {
+      console.log('formValues', this.formValues)
+    },
+  },
+}
+</script>
+
 <template>
   <section class="preview">
     <div class="preview__container">
       <div class="preview__content">
         <div class="preview__wrapper">
           <div class="preview__info">
-            <h2 class="preview__info-title">
-              Проведение независимой экспертизы и оценки
-            </h2>
+            <h2 class="preview__info-title">Проведение независимой экспертизы и оценки</h2>
             <span class="preview__info-subtitle"
-              >Все виды судебных и внесудебных экспертиз и исследований по
-              различным вопросам</span
+              >Все виды судебных и внесудебных экспертиз и исследований по различным вопросам</span
             >
           </div>
           <div class="preview__benefits">
             <div class="preview__benefits-item">
-              <img
-                class="preview__benefits-item-icon"
-                src="~/assets/icons/star.svg"
-                alt=""
-              /><span class="preview__benefits-item-title"
+              <img class="preview__benefits-item-icon" src="~/assets/icons/star.svg" alt="" /><span
+                class="preview__benefits-item-title"
                 >Гарантия на работы до 5 лет</span
               >
             </div>
             <div class="preview__benefits-item">
-              <img
-                class="preview__benefits-item-icon"
-                src="~/assets/icons/calendar.svg"
-                alt=""
-              /><span class="preview__benefits-item-title"
+              <img class="preview__benefits-item-icon" src="~/assets/icons/calendar.svg" alt="" /><span
+                class="preview__benefits-item-title"
                 >Используем точное оборудование</span
               >
             </div>
             <div class="preview__benefits-item">
-              <img
-                class="preview__benefits-item-icon"
-                src="~/assets/icons/alarmclock.svg"
-                alt=""
-              /><span class="preview__benefits-item-title"
+              <img class="preview__benefits-item-icon" src="~/assets/icons/alarmclock.svg" alt="" /><span
+                class="preview__benefits-item-title"
                 >Соблюдаем все сроки</span
               >
             </div>
           </div>
         </div>
+
         <form class="preview__form">
           <span class="preview__form-title">Оставить заявку</span>
-          <input
-            class="preview__form-input preview__form-input"
-            placeholder="+7 (999) 999 99 99"
-          />
-          <input
-            class="preview__form-input preview__form-input"
-            placeholder="Иван Иванов"
-          />
+          <ValidationProvider
+            class="preview__form-input"
+            rules="required|min:5|max:255"
+            v-slot="{ errors, valid, failed }"
+          >
+            <Input
+              placeholder="Иван Иванов"
+              :errors="errors"
+              :valid="valid"
+              :failed="failed"
+              v-model="formValues.name"
+              :dark="true"
+              id="name"
+            />
+          </ValidationProvider>
+
+          <ValidationProvider
+            :rules="{
+              required: true,
+              phone: /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/,
+            }"
+            v-slot="{ errors, valid, failed }"
+            class="preview__form-input"
+          >
+            <Input
+              placeholder="+7 (999) 999 99 99"
+              v-mask="'+7 (###) ###-##-##'"
+              v-model="formValues.number"
+              :errors="errors"
+              :valid="valid"
+              :failed="failed"
+              id="phone"
+              :dark="true"
+            />
+          </ValidationProvider>
+
           <button class="preview__form-button">Оставить заявку</button>
         </form>
       </div>
+
       <div class="preview__services">
         <div class="preview__services-item">
           <svg
@@ -94,8 +154,7 @@
             ><span class="preview__services-item-title">Экспертиза</span>
           </div>
           <p class="preview__services-item-description">
-            Профессиональная оценочная компания «ЭУН» предлагает услуги своих
-            опытных сотрудников
+            Профессиональная оценочная компания «ЭУН» предлагает услуги своих опытных сотрудников
           </p>
         </div>
         <div class="preview__services-item">
@@ -133,19 +192,14 @@
                 fill="#898088"
               />
               <path>
-                d="M26.5625 6.25H22.8125C22.6467 6.25 22.4878 6.31585 22.3706
-                6.43306C22.2533 6.55027 22.1875 6.70924 22.1875 6.875C22.1875
-                7.04076 22.2533 7.19973 22.3706 7.31694C22.4878 7.43415 22.6467
-                7.5 22.8125 7.5H26.5625C26.7283 7.5 26.8872 7.43415 27.0044
-                7.31694C27.1217 7.19973 27.1875 7.04076 27.1875 6.875C27.1875
-                6.70924 27.1217 6.55027 27.0044 6.43306C26.8872 6.31585 26.7283
-                6.25 26.5625 6.25ZM27.5 3.75H21.875C21.7092 3.75 21.5503 3.81585
-                21.4331 3.93306C21.3158 4.05027 21.25 4.20924 21.25 4.375C21.25
-                4.54076 21.3158 4.69973 21.4331 4.81694C21.5503 4.93415 21.7092
-                5 21.875 5H27.5C27.6658 5 27.8247 4.93415 27.9419
-                4.81694C28.0592 4.69973 28.125 4.54076 28.125 4.375C28.125
-                4.20924 28.0592 4.05027 27.9419 3.93306C27.8247 3.81585 27.6658
-                3.75 27.5 3.75Z" fill="#898088"/>
+                d="M26.5625 6.25H22.8125C22.6467 6.25 22.4878 6.31585 22.3706 6.43306C22.2533 6.55027 22.1875 6.70924
+                22.1875 6.875C22.1875 7.04076 22.2533 7.19973 22.3706 7.31694C22.4878 7.43415 22.6467 7.5 22.8125
+                7.5H26.5625C26.7283 7.5 26.8872 7.43415 27.0044 7.31694C27.1217 7.19973 27.1875 7.04076 27.1875
+                6.875C27.1875 6.70924 27.1217 6.55027 27.0044 6.43306C26.8872 6.31585 26.7283 6.25 26.5625 6.25ZM27.5
+                3.75H21.875C21.7092 3.75 21.5503 3.81585 21.4331 3.93306C21.3158 4.05027 21.25 4.20924 21.25 4.375C21.25
+                4.54076 21.3158 4.69973 21.4331 4.81694C21.5503 4.93415 21.7092 5 21.875 5H27.5C27.6658 5 27.8247
+                4.93415 27.9419 4.81694C28.0592 4.69973 28.125 4.54076 28.125 4.375C28.125 4.20924 28.0592 4.05027
+                27.9419 3.93306C27.8247 3.81585 27.6658 3.75 27.5 3.75Z" fill="#898088"/>
               </path>
             </g>
             <defs>
@@ -155,12 +209,11 @@
             </defs>
           </svg>
           <div class="preview__services-item-info">
-            <span class="preview__services-item-number">0.2</span
-            ><span class="preview__services-item-title">Оценка</span>
+            <span class="preview__services-item-number">0.2</span>
+            <span class="preview__services-item-title">Оценка</span>
           </div>
           <p class="preview__services-item-description">
-            Профессиональная оценочная компания «ЭУН» предлагает услуги своих
-            опытных сотрудников
+            Профессиональная оценочная компания «ЭУН» предлагает услуги своих опытных сотрудников
           </p>
         </div>
         <div class="preview__services-item">
@@ -182,27 +235,24 @@
             ><span class="preview__services-item-title">Аудит</span>
           </div>
           <p class="preview__services-item-description">
-            Профессиональная оценочная компания «ЭУН» предлагает услуги своих
-            опытных сотрудников
+            Профессиональная оценочная компания «ЭУН» предлагает услуги своих опытных сотрудников
           </p>
         </div>
       </div>
     </div>
   </section>
 </template>
-<script lang="ts">
-export default {};
-</script>
+
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/mixins" as ut;
-@use "@/assets/scss/styles/variables" as vars;
+@use '@/assets/scss/styles/mixins' as ut;
+@use '@/assets/scss/styles/variables' as vars;
 
 .preview {
   position: relative;
 
   background: linear-gradient(180deg, #342633 25%, rgba(52, 38, 51, 0) 100%),
     linear-gradient(90deg, #342633 68.62%, rgba(52, 38, 51, 0) 100%),
-    url("@/assets/images/draftsman.jpg") no-repeat bottom 158px right -334px;
+    url('@/assets/images/draftsman.jpg') no-repeat bottom 158px right -334px;
 
   // background-position: -96% 170%;
   background-repeat: no-repeat;
@@ -216,7 +266,7 @@ export default {};
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     display: block;
     bottom: 0;
     left: 0;
@@ -234,7 +284,7 @@ export default {};
     padding-top: 8.2rem;
     background: linear-gradient(180deg, #342633 8%, rgba(52, 38, 51, 0) 100%),
       linear-gradient(90deg, #342633 68.62%, rgba(52, 38, 51, 0) 100%),
-      url("@/assets/images/draftsman.jpg") no-repeat bottom 0px right 0;
+      url('@/assets/images/draftsman.jpg') no-repeat bottom 0px right 0;
 
     background-size: contain;
     background-position: right;
@@ -428,7 +478,7 @@ export default {};
 
     &-input {
       width: 100%;
-      padding: 1.1rem;
+      /* padding: 1.1rem;
       border: none;
       background: #433142;
       border-radius: 0.5rem;
@@ -437,7 +487,7 @@ export default {};
       font-size: 1.6rem;
       line-height: 1.6rem;
 
-      color: #898088;
+      color: #898088; */
     }
 
     &-button {

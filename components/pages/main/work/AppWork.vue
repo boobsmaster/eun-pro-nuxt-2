@@ -1,1068 +1,56 @@
-<template>
-  <section class="work">
-    <div class="work__container">
-      <header class="work__header">
-        <div class="work__header-container">
-          <div class="work__header-appendix"></div>
-          <h2 class="work__header-title">Примеры наших работ</h2>
-        </div>
-        <div class="work__header-wrapper">
-          <div class="swiper work__header-tabs">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <button
-                  class="work__header-tab work__header-tab_active"
-                  data-content="firstSlider"
-                >
-                  Все работы
-                </button>
-              </div>
-              <div class="swiper-slide">
-                <button class="work__header-tab" data-content="secondSlider">
-                  Экспертиза
-                </button>
-              </div>
-              <div class="swiper-slide">
-                <button class="work__header-tab" data-content="thirdSlider">
-                  Экологическая
-                </button>
-              </div>
-              <div class="swiper-slide">
-                <button class="work__header-tab" data-content="fourSlider">
-                  Землеустройство
-                </button>
-              </div>
-              <div class="swiper-slide">
-                <button class="work__header-tab" data-content="fiveSlider">
-                  Обследование
-                </button>
-              </div>
-              <div class="swiper-slide">
-                <button class="work__header-tab" data-content="sixSlider">
-                  Землеустройство
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-      <div class="work__content">
-        <div
-          class="swiper work__slider work__tab-content"
-          data-target="firstSlider"
-        >
-          <div class="swiper-wrapper work__slider-wrapper">
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__advanced-item">
-                <div class="work__advanced-item-preview">
-                  <div class="work__advanced-item-preview-overlay"></div>
-                  <img
-                    class="work__advanced-item-preview-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__advanced-item-preview-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__advanced-item-preview-link">
-                    <img
-                      class="work__advanced-item-preview-link-icon"
-                      src="~/assets/icons/arrow-right.svg"
-                      alt=""
-                    />
-                    <div class="work__advanced-item-preview-link-text">
-                      Подробнее
-                    </div>
-                    <a
-                      class="work__advanced-item-preview-link-source"
-                      href=""
-                    ></a>
-                  </div>
-                </div>
-                <div class="work__advanced-item-details">
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Объект:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Здание многофункционального комплекса "Орбион",
-                      расположенный по адресу: г. Москва, Инновационный центр
-                      Сколково, ул. Нобеля
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Вид экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Строительно-техническая экспертиза. Кадастровые работы.
-                      Геодезические работы.
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Результат экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Объект введен в эксплуатацию. Поставлен на кадастровый
-                      учет. Объект беспрепятственно функционирует.
-                    </p>
-                  </div>
-                  <button class="work__advanced-item-details-button">
-                    Хочу так же!<a
-                      class="work__advanced-item-details-button-link"
-                      href=""
-                    ></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/work-item-first-1.jpg"
-                    alt=""
-                  /><span class="work__item-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/work-item-first-2.jpg"
-                    alt=""
-                  /><span class="work__item-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/work-item-first-1.jpg"
-                    alt=""
-                  /><span class="work__item-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/work-item-first-2.jpg"
-                    alt=""
-                  /><span class="work__item-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/work-item-first-1.jpg"
-                    alt=""
-                  /><span class="work__item-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/work-item-first-2.jpg"
-                    alt=""
-                  /><span class="work__item-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-scrollbar"></div>
-          <div class="slider-after"></div>
-          <div class="slider-after slider-after_mobile"></div>
-        </div>
-        <div
-          class="swiper work__slider work__tab-content"
-          data-target="secondSlider"
-        >
-          <div class="swiper-wrapper work__slider-wrapper">
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__advanced-item">
-                <div class="work__advanced-item-preview">
-                  <div class="work__advanced-item-preview-overlay"></div>
-                  <img
-                    class="work__advanced-item-preview-image"
-                    src="~/assets/images/advanced-item-second.jpeg"
-                    alt=""
-                  /><span class="work__advanced-item-preview-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__advanced-item-preview-link">
-                    <img
-                      class="work__advanced-item-preview-link-icon"
-                      src="~/assets/icons/arrow-right.svg"
-                      alt=""
-                    />
-                    <div class="work__advanced-item-preview-link-text">
-                      Подробнее
-                    </div>
-                    <a
-                      class="work__advanced-item-preview-link-source"
-                      href=""
-                    ></a>
-                  </div>
-                </div>
-                <div class="work__advanced-item-details">
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Объект:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Здание многофункционального комплекса "Орбион",
-                      расположенный по адресу: г. Москва, Инновационный центр
-                      Сколково, ул. Нобеля
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Вид экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Строительно-техническая экспертиза. Кадастровые работы.
-                      Геодезические работы.
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Результат экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Объект введен в эксплуатацию. Поставлен на кадастровый
-                      учет. Объект беспрепятственно функционирует.
-                    </p>
-                  </div>
-                  <button class="work__advanced-item-details-button">
-                    Хочу так же!<a
-                      class="work__advanced-item-details-button-link"
-                      href=""
-                    ></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-second.jpeg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-scrollbar"></div>
-          <div class="slider-after"></div>
-          <div class="slider-after slider-after_mobile"></div>
-        </div>
-        <div
-          class="swiper work__slider work__tab-content"
-          data-target="thirdSlider"
-        >
-          <div class="swiper-wrapper work__slider-wrapper">
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__advanced-item">
-                <div class="work__advanced-item-preview">
-                  <div class="work__advanced-item-preview-overlay"></div>
-                  <img
-                    class="work__advanced-item-preview-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__advanced-item-preview-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__advanced-item-preview-link">
-                    <img
-                      class="work__advanced-item-preview-link-icon"
-                      src="~/assets/icons/arrow-right.svg"
-                      alt=""
-                    />
-                    <div class="work__advanced-item-preview-link-text">
-                      Подробнее
-                    </div>
-                    <a
-                      class="work__advanced-item-preview-link-source"
-                      href=""
-                    ></a>
-                  </div>
-                </div>
-                <div class="work__advanced-item-details">
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Объект:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Здание многофункционального комплекса "Орбион",
-                      расположенный по адресу: г. Москва, Инновационный центр
-                      Сколково, ул. Нобеля
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Вид экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Строительно-техническая экспертиза. Кадастровые работы.
-                      Геодезические работы.
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Результат экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Объект введен в эксплуатацию. Поставлен на кадастровый
-                      учет. Объект беспрепятственно функционирует.
-                    </p>
-                  </div>
-                  <button class="work__advanced-item-details-button">
-                    Хочу так же!<a
-                      class="work__advanced-item-details-button-link"
-                      href=""
-                    ></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-scrollbar"></div>
-          <div class="slider-after"></div>
-          <div class="slider-after slider-after_mobile"></div>
-        </div>
-        <div
-          class="swiper work__slider work__tab-content"
-          data-target="fourSlider"
-        >
-          <div class="swiper-wrapper work__slider-wrapper">
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__advanced-item">
-                <div class="work__advanced-item-preview">
-                  <div class="work__advanced-item-preview-overlay"></div>
-                  <img
-                    class="work__advanced-item-preview-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__advanced-item-preview-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__advanced-item-preview-link">
-                    <img
-                      class="work__advanced-item-preview-link-icon"
-                      src="~/assets/icons/arrow-right.svg"
-                      alt=""
-                    />
-                    <div class="work__advanced-item-preview-link-text">
-                      Подробнее
-                    </div>
-                    <a
-                      class="work__advanced-item-preview-link-source"
-                      href=""
-                    ></a>
-                  </div>
-                </div>
-                <div class="work__advanced-item-details">
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Объект:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Здание многофункционального комплекса "Орбион",
-                      расположенный по адресу: г. Москва, Инновационный центр
-                      Сколково, ул. Нобеля
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Вид экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Строительно-техническая экспертиза. Кадастровые работы.
-                      Геодезические работы.
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Результат экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Объект введен в эксплуатацию. Поставлен на кадастровый
-                      учет. Объект беспрепятственно функционирует.
-                    </p>
-                  </div>
-                  <button class="work__advanced-item-details-button">
-                    Хочу так же!<a
-                      class="work__advanced-item-details-button-link"
-                      href=""
-                    ></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-scrollbar"></div>
-          <div class="slider-after"></div>
-          <div class="slider-after slider-after_mobile"></div>
-        </div>
-        <div
-          class="swiper work__slider work__tab-content"
-          data-target="fiveSlider"
-        >
-          <div class="swiper-wrapper work__slider-wrapper">
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__advanced-item">
-                <div class="work__advanced-item-preview">
-                  <div class="work__advanced-item-preview-overlay"></div>
-                  <img
-                    class="work__advanced-item-preview-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__advanced-item-preview-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__advanced-item-preview-link">
-                    <img
-                      class="work__advanced-item-preview-link-icon"
-                      src="~/assets/icons/arrow-right.svg"
-                      alt=""
-                    />
-                    <div class="work__advanced-item-preview-link-text">
-                      Подробнее
-                    </div>
-                    <a
-                      class="work__advanced-item-preview-link-source"
-                      href=""
-                    ></a>
-                  </div>
-                </div>
-                <div class="work__advanced-item-details">
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Объект:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Здание многофункционального комплекса "Орбион",
-                      расположенный по адресу: г. Москва, Инновационный центр
-                      Сколково, ул. Нобеля
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Вид экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Строительно-техническая экспертиза. Кадастровые работы.
-                      Геодезические работы.
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Результат экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Объект введен в эксплуатацию. Поставлен на кадастровый
-                      учет. Объект беспрепятственно функционирует.
-                    </p>
-                  </div>
-                  <button class="work__advanced-item-details-button">
-                    Хочу так же!<a
-                      class="work__advanced-item-details-button-link"
-                      href=""
-                    ></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-scrollbar"></div>
-          <div class="slider-after"></div>
-          <div class="slider-after slider-after_mobile"></div>
-        </div>
-        <div
-          class="swiper work__slider work__tab-content"
-          data-target="sixSlider"
-        >
-          <div class="swiper-wrapper work__slider-wrapper">
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__advanced-item">
-                <div class="work__advanced-item-preview">
-                  <div class="work__advanced-item-preview-overlay"></div>
-                  <img
-                    class="work__advanced-item-preview-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__advanced-item-preview-title"
-                    >Общество с ограниченной ответственностью «Финмаркт»</span
-                  >
-                  <div class="work__advanced-item-preview-link">
-                    <img
-                      class="work__advanced-item-preview-link-icon"
-                      src="~/assets/icons/arrow-right.svg"
-                      alt=""
-                    />
-                    <div class="work__advanced-item-preview-link-text">
-                      Подробнее
-                    </div>
-                    <a
-                      class="work__advanced-item-preview-link-source"
-                      href=""
-                    ></a>
-                  </div>
-                </div>
-                <div class="work__advanced-item-details">
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Объект:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Здание многофункционального комплекса "Орбион",
-                      расположенный по адресу: г. Москва, Инновационный центр
-                      Сколково, ул. Нобеля
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Вид экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Строительно-техническая экспертиза. Кадастровые работы.
-                      Геодезические работы.
-                    </p>
-                  </div>
-                  <div class="work__advanced-item-details-info">
-                    <span class="work__advanced-item-details-info-title"
-                      >Результат экспертизы:</span
-                    >
-                    <p class="work__advanced-item-details-info-description">
-                      Объект введен в эксплуатацию. Поставлен на кадастровый
-                      учет. Объект беспрепятственно функционирует.
-                    </p>
-                  </div>
-                  <button class="work__advanced-item-details-button">
-                    Хочу так же!<a
-                      class="work__advanced-item-details-button-link"
-                      href=""
-                    ></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide work__slider-slide">
-              <div class="work__slide-container">
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-                <div class="work__item">
-                  <img
-                    class="work__item-image"
-                    src="~/assets/images/advanced-item-first.jpg"
-                    alt=""
-                  /><span class="work__item-title"></span>
-                  <div class="work__item-overlay"></div>
-                  <a class="work__item-link" href=""></a>
-                  <button class="work__item-button">
-                    Хочу так же <a class="work__item-button-link" href=""></a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-scrollbar"></div>
-          <div class="slider-after"></div>
-          <div class="slider-after slider-after_mobile"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-</template>
-
 <script lang="ts">
-import { Swiper, FreeMode, Scrollbar } from "swiper";
+import { Swiper, FreeMode, Scrollbar } from 'swiper'
+import WriteTwo from '~/components/common/forms/WriteTwo.vue'
+import Modal from '~/components/common/modal/Modal.vue'
+
 export class workHandler {
-  mainContainer: HTMLElement | null = null;
-  workSliders: NodeList | null = null;
-  tabsSlider: HTMLElement | null = null;
-  tabs: NodeList | null = null;
-  tabsContent: NodeList | null = null;
-  mobileOffset: number | null | undefined = null;
-  slider: Swiper | null;
+  mainContainer: HTMLElement | null = null
+  workSliders: NodeList | null = null
+  tabsSlider: HTMLElement | null = null
+  tabs: NodeList | null = null
+  tabsContent: NodeList | null = null
+  mobileOffset: number | null | undefined = null
+  slider: Swiper | null
 
   constructor(element: HTMLElement) {
-    this.mainContainer = element;
+    this.mainContainer = element
 
-    this.tabsSlider = this.mainContainer.querySelector(".work__header-tabs");
-    this.tabs = this.mainContainer.querySelectorAll(".work__header-tab");
-    this.tabsContent =
-      this.mainContainer.querySelectorAll(".work__tab-content");
-    this.mobileOffset = this.getOffset();
-    this.slider = null;
+    this.tabsSlider = this.mainContainer.querySelector('.work__header-tabs')
+    this.tabs = this.mainContainer.querySelectorAll('.work__header-tab')
+    this.tabsContent = this.mainContainer.querySelectorAll('.work__tab-content')
+    this.mobileOffset = this.getOffset()
+    this.slider = null
 
-    this.addTabsListeners();
-    this.initWorkSlider();
-    this.initTabsSlider();
-    this.initTabs();
+    this.addTabsListeners()
+    this.initWorkSlider()
+    this.initTabsSlider()
+    this.initTabs()
 
-    return this;
+    return this
   }
 
   private getOffset() {
-    const container = document.querySelector(".work__header-container");
-    const containerRect = container?.getBoundingClientRect();
+    const container = document.querySelector('.work__header-container')
+    const containerRect = container?.getBoundingClientRect()
 
-    return containerRect?.x;
+    return containerRect?.x
   }
 
   private setOffset() {
-    return (this.getOffset() as number) - 20;
+    return (this.getOffset() as number) - 20
   }
 
   private initWorkSlider() {
     if (this.mainContainer) {
-      this.workSliders = this.mainContainer.querySelectorAll(".work__slider");
+      this.workSliders = this.mainContainer.querySelectorAll('.work__slider')
 
       this.workSliders.forEach((element) => {
-        const slider = element as HTMLElement;
+        const slider = element as HTMLElement
 
         const swiper = new Swiper(slider, {
-          direction: "horizontal",
-          touchEventsTarget: "container",
-          slidesPerView: "auto",
+          direction: 'horizontal',
+          touchEventsTarget: 'container',
+          slidesPerView: 'auto',
           slidesOffsetBefore: this.setOffset() as number,
           spaceBetween: 20,
           observer: true,
@@ -1071,7 +59,7 @@ export class workHandler {
 
           modules: [Scrollbar, FreeMode],
           scrollbar: {
-            el: ".swiper-scrollbar",
+            el: '.swiper-scrollbar',
             dragSize: 65,
             hide: false,
           },
@@ -1091,47 +79,45 @@ export class workHandler {
               },
             },
           },
-        });
+        })
 
-        const tabs = document.querySelector(
-          ".work__header-wrapper"
-        ) as HTMLElement;
+        const tabs = document.querySelector('.work__header-wrapper') as HTMLElement
 
         if (window.innerWidth <= 990) {
-          tabs.style.marginLeft = `${this.setOffset() as number}px`;
+          tabs.style.marginLeft = `${this.setOffset() as number}px`
         }
 
         window.addEventListener(
-          "resize",
+          'resize',
           () => {
             if (window.innerWidth <= 990) {
-              tabs.style.marginLeft = `${this.setOffset() as number}px`;
-              swiper.params.slidesOffsetBefore = this.setOffset() as number;
+              tabs.style.marginLeft = `${this.setOffset() as number}px`
+              swiper.params.slidesOffsetBefore = this.setOffset() as number
 
-              swiper.updateSize();
-              swiper.updateProgress();
-              swiper.update();
+              swiper.updateSize()
+              swiper.updateProgress()
+              swiper.update()
             } else {
-              tabs.style.marginLeft = "0px";
+              tabs.style.marginLeft = '0px'
 
-              swiper.params.slidesOffsetBefore = 0;
-              swiper.update();
+              swiper.params.slidesOffsetBefore = 0
+              swiper.update()
             }
           },
           false
-        );
+        )
 
-        return swiper;
-      });
+        return swiper
+      })
     }
 
-    return false;
+    return false
   }
 
   private initTabsSlider() {
     const swiper = new Swiper(this.tabsSlider as HTMLElement, {
-      direction: "horizontal",
-      slidesPerView: "auto",
+      direction: 'horizontal',
+      slidesPerView: 'auto',
       spaceBetween: 20,
       freeMode: true,
 
@@ -1145,85 +131,806 @@ export class workHandler {
       },
 
       modules: [FreeMode],
-    });
+    })
 
-    return swiper;
+    return swiper
   }
 
   private initTabs() {
-    const activeTab = this.tabsSlider?.querySelector(
-      ".work__header-tab_active"
-    ) as HTMLElement;
+    const activeTab = this.tabsSlider?.querySelector('.work__header-tab_active') as HTMLElement
 
     if (activeTab) {
-      const targetAttribute = activeTab.getAttribute("data-content");
+      const targetAttribute = activeTab.getAttribute('data-content')
 
       if (targetAttribute) {
-        const activeContent = this.mainContainer?.querySelector(
-          `[data-target=${targetAttribute}]`
-        ) as HTMLElement;
+        const activeContent = this.mainContainer?.querySelector(`[data-target=${targetAttribute}]`) as HTMLElement
 
-        activeContent.classList.add("work__tab-content_active");
+        activeContent.classList.add('work__tab-content_active')
       }
     }
   }
 
   private addTabsListeners() {
     this.tabs?.forEach((element) => {
-      element.addEventListener("click", this.onClick.bind(this));
-    });
+      element.addEventListener('click', this.onClick.bind(this))
+    })
   }
 
   private onClick(event: Event) {
-    this.initWorkSlider();
-    const target = event.target as HTMLElement;
+    this.initWorkSlider()
+    const target = event.target as HTMLElement
 
-    const targetAttribute = target.getAttribute("data-content");
+    const targetAttribute = target.getAttribute('data-content')
 
     this.tabs?.forEach((element) => {
-      const tab = element as HTMLElement;
+      const tab = element as HTMLElement
 
-      tab.classList.remove("work__header-tab_active");
-    });
+      tab.classList.remove('work__header-tab_active')
+    })
 
-    target.classList.add("work__header-tab_active");
+    target.classList.add('work__header-tab_active')
 
     if (targetAttribute) {
       this.tabsContent?.forEach((Element) => {
-        const content = Element as HTMLElement;
+        const content = Element as HTMLElement
 
-        content.classList.add("work__tab-content");
-        content.classList.remove("work__tab-content_active");
-      });
+        content.classList.add('work__tab-content')
+        content.classList.remove('work__tab-content_active')
+      })
 
-      const activeContent = this.mainContainer?.querySelector(
-        `[data-target=${targetAttribute}]`
-      ) as HTMLElement;
+      const activeContent = this.mainContainer?.querySelector(`[data-target=${targetAttribute}]`) as HTMLElement
 
-      activeContent.classList.add("work__tab-content_active");
+      activeContent.classList.add('work__tab-content_active')
     }
   }
 }
 
 const initWork = () => {
-  const work = document.querySelectorAll(".work");
+  const work = document.querySelectorAll('.work')
 
   work.forEach((element) => {
-    new workHandler(element as HTMLElement);
-  });
-};
+    new workHandler(element as HTMLElement)
+  })
+}
 if (process.browser) {
-  window.addEventListener("load", initWork);
+  window.addEventListener('load', initWork)
 }
 
 export default {
-  name: "AppWork",
-};
+  name: 'AppWork',
+  components: { WriteTwo, Modal },
+  data() {
+    const isVisibleModal = false
+
+    return {
+      isVisibleModal,
+    }
+  },
+  methods: {
+    changeVisibleModal() {
+      this.isVisibleModal = !this.isVisibleModal
+    },
+  },
+  created: {},
+}
 </script>
 
+<template>
+  <section class="work">
+    <Modal v-if="isVisibleModal">
+      <WriteTwo @close="changeVisibleModal" />
+    </Modal>
+    <div class="work__container">
+      <header class="work__header">
+        <div class="work__header-container">
+          <div class="work__header-appendix"></div>
+          <h2 class="work__header-title">Примеры наших работ</h2>
+        </div>
+        <div class="work__header-wrapper">
+          <div class="swiper work__header-tabs">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <button class="work__header-tab work__header-tab_active" data-content="firstSlider">Все работы</button>
+              </div>
+              <div class="swiper-slide">
+                <button class="work__header-tab" data-content="secondSlider">Экспертиза</button>
+              </div>
+              <div class="swiper-slide">
+                <button class="work__header-tab" data-content="thirdSlider">Экологическая</button>
+              </div>
+              <div class="swiper-slide">
+                <button class="work__header-tab" data-content="fourSlider">Землеустройство</button>
+              </div>
+              <div class="swiper-slide">
+                <button class="work__header-tab" data-content="fiveSlider">Обследование</button>
+              </div>
+              <div class="swiper-slide">
+                <button class="work__header-tab" data-content="sixSlider">Землеустройство</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="work__content">
+        <div class="swiper work__slider work__tab-content" data-target="firstSlider">
+          <div class="swiper-wrapper work__slider-wrapper">
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__advanced-item">
+                <div class="work__advanced-item-preview">
+                  <div class="work__advanced-item-preview-overlay"></div>
+                  <img
+                    class="work__advanced-item-preview-image"
+                    src="~/assets/images/advanced-item-first.jpg"
+                    alt=""
+                  /><span class="work__advanced-item-preview-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__advanced-item-preview-link">
+                    <img class="work__advanced-item-preview-link-icon" src="~/assets/icons/arrow-right.svg" alt="" />
+                    <div class="work__advanced-item-preview-link-text">Подробнее</div>
+                    <a class="work__advanced-item-preview-link-source" href=""></a>
+                  </div>
+                </div>
+                <div class="work__advanced-item-details">
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Объект:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Здание многофункционального комплекса "Орбион", расположенный по адресу: г. Москва, Инновационный
+                      центр Сколково, ул. Нобеля
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Вид экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Строительно-техническая экспертиза. Кадастровые работы. Геодезические работы.
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Результат экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Объект введен в эксплуатацию. Поставлен на кадастровый учет. Объект беспрепятственно
+                      функционирует.
+                    </p>
+                  </div>
+                  <button @click="changeVisibleModal" class="work__advanced-item-details-button">Хочу так же!</button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/work-item-first-1.jpg" alt="" /><span
+                    class="work__item-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/work-item-first-2.jpg" alt="" /><span
+                    class="work__item-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/work-item-first-1.jpg" alt="" /><span
+                    class="work__item-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/work-item-first-2.jpg" alt="" /><span
+                    class="work__item-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/work-item-first-1.jpg" alt="" /><span
+                    class="work__item-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/work-item-first-2.jpg" alt="" /><span
+                    class="work__item-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+          <div class="slider-after"></div>
+          <div class="slider-after slider-after_mobile"></div>
+        </div>
+        <div class="swiper work__slider work__tab-content" data-target="secondSlider">
+          <div class="swiper-wrapper work__slider-wrapper">
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__advanced-item">
+                <div class="work__advanced-item-preview">
+                  <div class="work__advanced-item-preview-overlay"></div>
+                  <img
+                    class="work__advanced-item-preview-image"
+                    src="~/assets/images/advanced-item-second.jpeg"
+                    alt=""
+                  /><span class="work__advanced-item-preview-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__advanced-item-preview-link">
+                    <img class="work__advanced-item-preview-link-icon" src="~/assets/icons/arrow-right.svg" alt="" />
+                    <div class="work__advanced-item-preview-link-text">Подробнее</div>
+                    <a class="work__advanced-item-preview-link-source" href=""></a>
+                  </div>
+                </div>
+                <div class="work__advanced-item-details">
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Объект:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Здание многофункционального комплекса "Орбион", расположенный по адресу: г. Москва, Инновационный
+                      центр Сколково, ул. Нобеля
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Вид экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Строительно-техническая экспертиза. Кадастровые работы. Геодезические работы.
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Результат экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Объект введен в эксплуатацию. Поставлен на кадастровый учет. Объект беспрепятственно
+                      функционирует.
+                    </p>
+                  </div>
+                  <button class="work__advanced-item-details-button">
+                    Хочу так же!<a class="work__advanced-item-details-button-link" href=""></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-second.jpeg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+          <div class="slider-after"></div>
+          <div class="slider-after slider-after_mobile"></div>
+        </div>
+        <div class="swiper work__slider work__tab-content" data-target="thirdSlider">
+          <div class="swiper-wrapper work__slider-wrapper">
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__advanced-item">
+                <div class="work__advanced-item-preview">
+                  <div class="work__advanced-item-preview-overlay"></div>
+                  <img
+                    class="work__advanced-item-preview-image"
+                    src="~/assets/images/advanced-item-first.jpg"
+                    alt=""
+                  /><span class="work__advanced-item-preview-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__advanced-item-preview-link">
+                    <img class="work__advanced-item-preview-link-icon" src="~/assets/icons/arrow-right.svg" alt="" />
+                    <div class="work__advanced-item-preview-link-text">Подробнее</div>
+                    <a class="work__advanced-item-preview-link-source" href=""></a>
+                  </div>
+                </div>
+                <div class="work__advanced-item-details">
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Объект:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Здание многофункционального комплекса "Орбион", расположенный по адресу: г. Москва, Инновационный
+                      центр Сколково, ул. Нобеля
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Вид экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Строительно-техническая экспертиза. Кадастровые работы. Геодезические работы.
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Результат экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Объект введен в эксплуатацию. Поставлен на кадастровый учет. Объект беспрепятственно
+                      функционирует.
+                    </p>
+                  </div>
+                  <button class="work__advanced-item-details-button">
+                    Хочу так же!<a class="work__advanced-item-details-button-link" href=""></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+          <div class="slider-after"></div>
+          <div class="slider-after slider-after_mobile"></div>
+        </div>
+        <div class="swiper work__slider work__tab-content" data-target="fourSlider">
+          <div class="swiper-wrapper work__slider-wrapper">
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__advanced-item">
+                <div class="work__advanced-item-preview">
+                  <div class="work__advanced-item-preview-overlay"></div>
+                  <img
+                    class="work__advanced-item-preview-image"
+                    src="~/assets/images/advanced-item-first.jpg"
+                    alt=""
+                  /><span class="work__advanced-item-preview-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__advanced-item-preview-link">
+                    <img class="work__advanced-item-preview-link-icon" src="~/assets/icons/arrow-right.svg" alt="" />
+                    <div class="work__advanced-item-preview-link-text">Подробнее</div>
+                    <a class="work__advanced-item-preview-link-source" href=""></a>
+                  </div>
+                </div>
+                <div class="work__advanced-item-details">
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Объект:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Здание многофункционального комплекса "Орбион", расположенный по адресу: г. Москва, Инновационный
+                      центр Сколково, ул. Нобеля
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Вид экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Строительно-техническая экспертиза. Кадастровые работы. Геодезические работы.
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Результат экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Объект введен в эксплуатацию. Поставлен на кадастровый учет. Объект беспрепятственно
+                      функционирует.
+                    </p>
+                  </div>
+                  <button class="work__advanced-item-details-button">
+                    Хочу так же!<a class="work__advanced-item-details-button-link" href=""></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+          <div class="slider-after"></div>
+          <div class="slider-after slider-after_mobile"></div>
+        </div>
+        <div class="swiper work__slider work__tab-content" data-target="fiveSlider">
+          <div class="swiper-wrapper work__slider-wrapper">
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__advanced-item">
+                <div class="work__advanced-item-preview">
+                  <div class="work__advanced-item-preview-overlay"></div>
+                  <img
+                    class="work__advanced-item-preview-image"
+                    src="~/assets/images/advanced-item-first.jpg"
+                    alt=""
+                  /><span class="work__advanced-item-preview-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__advanced-item-preview-link">
+                    <img class="work__advanced-item-preview-link-icon" src="~/assets/icons/arrow-right.svg" alt="" />
+                    <div class="work__advanced-item-preview-link-text">Подробнее</div>
+                    <a class="work__advanced-item-preview-link-source" href=""></a>
+                  </div>
+                </div>
+                <div class="work__advanced-item-details">
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Объект:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Здание многофункционального комплекса "Орбион", расположенный по адресу: г. Москва, Инновационный
+                      центр Сколково, ул. Нобеля
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Вид экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Строительно-техническая экспертиза. Кадастровые работы. Геодезические работы.
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Результат экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Объект введен в эксплуатацию. Поставлен на кадастровый учет. Объект беспрепятственно
+                      функционирует.
+                    </p>
+                  </div>
+                  <button class="work__advanced-item-details-button">
+                    Хочу так же!<a class="work__advanced-item-details-button-link" href=""></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+          <div class="slider-after"></div>
+          <div class="slider-after slider-after_mobile"></div>
+        </div>
+        <div class="swiper work__slider work__tab-content" data-target="sixSlider">
+          <div class="swiper-wrapper work__slider-wrapper">
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__advanced-item">
+                <div class="work__advanced-item-preview">
+                  <div class="work__advanced-item-preview-overlay"></div>
+                  <img
+                    class="work__advanced-item-preview-image"
+                    src="~/assets/images/advanced-item-first.jpg"
+                    alt=""
+                  /><span class="work__advanced-item-preview-title"
+                    >Общество с ограниченной ответственностью «Финмаркт»</span
+                  >
+                  <div class="work__advanced-item-preview-link">
+                    <img class="work__advanced-item-preview-link-icon" src="~/assets/icons/arrow-right.svg" alt="" />
+                    <div class="work__advanced-item-preview-link-text">Подробнее</div>
+                    <a class="work__advanced-item-preview-link-source" href=""></a>
+                  </div>
+                </div>
+                <div class="work__advanced-item-details">
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Объект:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Здание многофункционального комплекса "Орбион", расположенный по адресу: г. Москва, Инновационный
+                      центр Сколково, ул. Нобеля
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Вид экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Строительно-техническая экспертиза. Кадастровые работы. Геодезические работы.
+                    </p>
+                  </div>
+                  <div class="work__advanced-item-details-info">
+                    <span class="work__advanced-item-details-info-title">Результат экспертизы:</span>
+                    <p class="work__advanced-item-details-info-description">
+                      Объект введен в эксплуатацию. Поставлен на кадастровый учет. Объект беспрепятственно
+                      функционирует.
+                    </p>
+                  </div>
+                  <button class="work__advanced-item-details-button">
+                    Хочу так же!<a class="work__advanced-item-details-button-link" href=""></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide work__slider-slide">
+              <div class="work__slide-container">
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+                <div class="work__item">
+                  <img class="work__item-image" src="~/assets/images/advanced-item-first.jpg" alt="" /><span
+                    class="work__item-title"
+                  ></span>
+                  <div class="work__item-overlay"></div>
+                  <a class="work__item-link" href=""></a>
+                  <button class="work__item-button">Хочу так же <a class="work__item-button-link" href=""></a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+          <div class="slider-after"></div>
+          <div class="slider-after slider-after_mobile"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/mixins" as ut;
-@use "@/assets/scss/styles/variables" as vars;
+@use '@/assets/scss/styles/mixins' as ut;
+@use '@/assets/scss/styles/variables' as vars;
 
 .slider-after {
   display: none;
@@ -1241,13 +948,8 @@ export default {
 
     transition: all 0.3s ease-in-out;
 
-    background: linear-gradient(
-      270deg,
-      #342633 0%,
-      rgba(52, 38, 51, 0.8) 52.6%,
-      rgba(52, 38, 51, 0) 100%
-    );
-    content: "";
+    background: linear-gradient(270deg, #342633 0%, rgba(52, 38, 51, 0.8) 52.6%, rgba(52, 38, 51, 0) 100%);
+    content: '';
     z-index: 4;
 
     button {
@@ -1273,13 +975,8 @@ export default {
 
   transition: all 0.3s ease-in-out;
 
-  background: linear-gradient(
-    270deg,
-    #342633 0%,
-    rgba(52, 38, 51, 0.8) 52.6%,
-    rgba(52, 38, 51, 0) 100%
-  );
-  content: "";
+  background: linear-gradient(270deg, #342633 0%, rgba(52, 38, 51, 0.8) 52.6%, rgba(52, 38, 51, 0) 100%);
+  content: '';
   z-index: 4;
 
   @include ut.tablet {
@@ -1436,7 +1133,7 @@ export default {
       outline: none;
       border: none;
       background-color: transparent;
-      font-family: "Gilroy";
+      font-family: 'Gilroy';
       font-weight: 700;
       font-size: 1.4rem;
       line-height: 1.7rem;
@@ -1451,7 +1148,7 @@ export default {
 
         &::after {
           display: block;
-          content: "";
+          content: '';
         }
       }
     }
@@ -1567,11 +1264,7 @@ export default {
 
           .work__advanced-item-preview-overlay {
             transition: all 0.3s ease-in-out;
-            background: linear-gradient(
-              0deg,
-              rgba(52, 38, 51, 0),
-              rgba(52, 38, 51, 0)
-            );
+            background: linear-gradient(0deg, rgba(52, 38, 51, 0), rgba(52, 38, 51, 0));
           }
 
           .work__advanced-item-preview-link-text {
@@ -1641,11 +1334,7 @@ export default {
         z-index: 2;
         transition: all 0.3s ease-in-out;
 
-        background: linear-gradient(
-          0deg,
-          rgba(52, 38, 51, 0.8),
-          rgba(52, 38, 51, 0.8)
-        );
+        background: linear-gradient(0deg, rgba(52, 38, 51, 0.8), rgba(52, 38, 51, 0.8));
       }
 
       &-link {
@@ -1750,7 +1439,7 @@ export default {
         outline: none;
         border: none;
 
-        font-family: "Gilroy";
+        font-family: 'Gilroy';
         font-style: normal;
         font-weight: 700;
         font-size: 1.2rem;
@@ -1860,11 +1549,7 @@ export default {
       height: 100%;
       z-index: 2;
 
-      background: linear-gradient(
-        0deg,
-        rgba(52, 38, 51, 0.8),
-        rgba(52, 38, 51, 0.8)
-      );
+      background: linear-gradient(0deg, rgba(52, 38, 51, 0.8), rgba(52, 38, 51, 0.8));
     }
 
     &-link {
@@ -1898,7 +1583,7 @@ export default {
         width: 238px;
         height: 50px;
 
-        font-family: "Gilroy";
+        font-family: 'Gilroy';
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
