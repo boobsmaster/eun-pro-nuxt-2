@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import MainPage from "~/components/pages/main/MainPage.vue";
+import MainPage from '~/components/pages/main/MainPage.vue'
 
 export default {
-  name: "IndexPage",
+  name: 'IndexPage',
   components: { MainPage },
-};
+}
 </script>
 -

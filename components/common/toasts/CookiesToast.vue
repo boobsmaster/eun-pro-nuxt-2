@@ -4,16 +4,29 @@ import Button from '~/components/common/button/Button.vue'
 export default {
   name: 'CookiesToast',
   components: { Button },
+  emits: ['close'],
+  data() {
+    const isOpen = true
+
+    return {
+      isOpen,
+    }
+  },
+  methods: {
+    hide() {
+      this.isOpen = false
+    },
+  },
 }
 </script>
 
 <template>
-  <div class="container">
+  <div v-if="isOpen" class="container">
     <p class="container__text">
       Мы используем cookies, чтобы вам было удобнее пользоваться сайтом. Продолжая пользоваться сайтом, вы принимаете
       условия обработки персональных данных
     </p>
-    <div class="container__button">
+    <div @click="hide" class="container__button">
       <Button>Понятно</Button>
     </div>
   </div>
@@ -21,14 +34,18 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  position: fixed;
+  bottom: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   padding: 30px;
   gap: 48px;
 
   width: 100%;
-  max-width: 840px;
 
+  z-index: 999;
   border-radius: 5px;
   background: var(--white, #f3f3f3);
 
@@ -44,6 +61,7 @@ export default {
 
   &__button {
     width: 100%;
+    height: auto;
     max-width: 225px;
     flex: 0 0 auto;
   }

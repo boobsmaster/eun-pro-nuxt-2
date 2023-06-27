@@ -11,11 +11,14 @@ export default {
     title: { type: String, required: true },
     description: { type: String, required: true },
   },
+  methods: {
+    close() {},
+  },
 }
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" v-click-outside="close">
     <div class="container__header">
       <div class="container__header-controls">
         <h2 class="container__header-title">{{ title }}</h2>

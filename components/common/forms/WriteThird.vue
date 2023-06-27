@@ -5,6 +5,7 @@ import FormWrapper from './FormWrapper.vue'
 import Agreement from './components/Agreement.vue'
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
 import { max, min, required, regex } from 'vee-validate/dist/rules'
+import Toast from '../toasts/Toast.vue'
 
 extend('required', {
   ...required,
@@ -26,7 +27,7 @@ extend('email', {
 
 export default {
   name: 'ContactsForm3',
-  components: { FormWrapper, Button, Input, Agreement, ValidationObserver, ValidationProvider },
+  components: { FormWrapper, Button, Input, Agreement, ValidationObserver, ValidationProvider, Toast },
   emits: ['close'],
   data() {
     const formValues = {
@@ -34,81 +35,99 @@ export default {
       email: '',
       question: '',
     }
+    const isValidForm = false
 
     return {
       formValues,
+      isValidForm,
     }
   },
   methods: {
     save() {
       console.log('formValues', this.formValues)
+
+      this.isValidForm = !this.isValidForm
+
+      setTimeout(() => {
+        this.isValidForm = false
+
+        this.$emit('close')
+      }, 1000)
     },
   },
 }
 </script>
 
 <template>
-  <FormWrapper
-    @close="$emit('close')"
-    title="Мы вам напишем"
-    description="Оставьте ваши данные и мы свяжемся с вами. Мы не занимаемся рассылкой рекламных сообщений, а так же не передаем контактные данные третьим лицам"
-  >
-    <ValidationObserver v-slot="{ handleSubmit }" tag="div">
-      <form @submit.prevent="handleSubmit(save)" class="form">
-        <div class="form__content">
-          <ValidationProvider rules="required|min:5|max:255" v-slot="{ errors, valid, failed }">
-            <Input
-              label="Имя"
-              placeholder="Иван Иванов"
-              :errors="errors"
-              :valid="valid"
-              :failed="failed"
-              v-model="formValues.name"
-              id="name"
-              class="form__input form__input_name"
-            />
-          </ValidationProvider>
-          <ValidationProvider
-            :rules="{
-              required: true,
-              email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-            }"
-            v-slot="{ errors, valid, failed }"
-          >
-            <Input
-              label="Почта"
-              placeholder="example@mail.ru"
-              v-model="formValues.email"
-              :errors="errors"
-              :valid="valid"
-              :failed="failed"
-              id="email"
-              class="form__input"
-            />
-          </ValidationProvider>
-          <ValidationProvider rules="required|min:5|max:255" v-slot="{ errors, valid, failed }" class="form__textarea">
-            <Input
-              label="Вопрос"
-              placeholder="Введите текст..."
-              :errors="errors"
-              :valid="valid"
-              :failed="failed"
-              type="textarea"
-              v-model="formValues.question"
+  <div>
+    <FormWrapper
+      @close="$emit('close')"
+      title="Мы вам напишем"
+      v-if="!isValidForm"
+      description="Оставьте ваши данные и мы свяжемся с вами. Мы не занимаемся рассылкой рекламных сообщений, а так же не передаем контактные данные третьим лицам"
+    >
+      <ValidationObserver v-slot="{ handleSubmit }" tag="div">
+        <form @submit.prevent="handleSubmit(save)" class="form">
+          <div class="form__content">
+            <ValidationProvider rules="required|min:5|max:255" v-slot="{ errors, valid, failed }">
+              <Input
+                label="Имя"
+                placeholder="Иван Иванов"
+                :errors="errors"
+                :valid="valid"
+                :failed="failed"
+                v-model="formValues.name"
+                id="name"
+                class="form__input form__input_name"
+              />
+            </ValidationProvider>
+            <ValidationProvider
+              :rules="{
+                required: true,
+                email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+              }"
+              v-slot="{ errors, valid, failed }"
+            >
+              <Input
+                label="Почта"
+                placeholder="example@mail.ru"
+                v-model="formValues.email"
+                :errors="errors"
+                :valid="valid"
+                :failed="failed"
+                id="email"
+                class="form__input"
+              />
+            </ValidationProvider>
+            <ValidationProvider
+              rules="required|min:5|max:255"
+              v-slot="{ errors, valid, failed }"
               class="form__textarea"
-              id="question"
-            />
-          </ValidationProvider>
-        </div>
-        <div class="form__control">
-          <Agreement class="form__agreement" />
-          <div class="form__button">
-            <Button>Задать вопрос</Button>
+            >
+              <Input
+                label="Вопрос"
+                placeholder="Введите текст..."
+                :errors="errors"
+                :valid="valid"
+                :failed="failed"
+                type="textarea"
+                v-model="formValues.question"
+                class="form__textarea"
+                id="question"
+              />
+            </ValidationProvider>
           </div>
-        </div>
-      </form>
-    </ValidationObserver>
-  </FormWrapper>
+          <div class="form__control">
+            <Agreement class="form__agreement" />
+            <div class="form__button">
+              <Button>Задать вопрос</Button>
+            </div>
+          </div>
+        </form>
+      </ValidationObserver>
+    </FormWrapper>
+    <Toast v-if="isValidForm" title="Заявка принята" message="Наш менеджер свяжется с Вами в ближайшее время!" />
+  </div>
 </template>
 
 <style lang="scss" scoped>

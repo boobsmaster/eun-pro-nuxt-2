@@ -7,6 +7,7 @@ import Agreement from './components/Agreement.vue'
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
 import { max, min, required, regex } from 'vee-validate/dist/rules'
 
+import Toast from '../toasts/Toast.vue'
 extend('required', {
   ...required,
   message: 'Это поле обязательное!',
@@ -27,9 +28,10 @@ extend('phone', {
 
 export default {
   name: 'WriteFormOne',
-  components: { Icon, Input, Button, FormWrapper, Agreement, ValidationProvider, ValidationObserver },
+  components: { Icon, Input, Button, FormWrapper, Agreement, ValidationProvider, ValidationObserver, Toast },
   emits: ['close'],
   data() {
+    const isValidForm = false
     const formValues = {
       name: '',
       number: '',
@@ -37,71 +39,84 @@ export default {
 
     return {
       formValues,
+      isValidForm,
     }
   },
   methods: {
     save() {
       console.log('formValues', this.formValues)
+
+      this.isValidForm = !this.isValidForm
+
+      setTimeout(() => {
+        this.isValidForm = false
+
+        this.$emit('close')
+      }, 1000)
     },
   },
 }
 </script>
 
 <template>
-  <FormWrapper
-    @close="$emit('close')"
-    title="Затрудняетесь c выбором?"
-    description="Персональный менеджер свяжется c вами и подготовит для вас предложение."
-  >
-    <div class="form">
-      <div class="form__description">
-        <div class="form__description-info">
-          <span class="form__description-title">Бобров Денис Вадимович</span>
-          <span class="form__description-subtitle">Ваш персональный менеджер</span>
+  <div>
+    <FormWrapper
+      @close="$emit('close')"
+      v-if="!isValidForm"
+      title="Затрудняетесь c выбором?"
+      description="Персональный менеджер свяжется c вами и подготовит для вас предложение."
+    >
+      <div class="form">
+        <div class="form__description">
+          <div class="form__description-info">
+            <span class="form__description-title">Бобров Денис Вадимович</span>
+            <span class="form__description-subtitle">Ваш персональный менеджер</span>
+          </div>
+          <img src="~/assets/images/form-director.png" alt="" class="form__description-image" />
         </div>
-        <img src="~/assets/images/form-director.png" alt="" class="form__description-image" />
+
+        <ValidationObserver v-slot="{ handleSubmit }" tag="div">
+          <form @submit.prevent="handleSubmit(save)" class="form__content">
+            <ValidationProvider rules="required|min:5|max:255" v-slot="{ errors, valid, failed }">
+              <Input
+                label="Имя"
+                placeholder="Иван Иванов"
+                :errors="errors"
+                :valid="valid"
+                :failed="failed"
+                v-model="formValues.name"
+                id="name"
+              />
+            </ValidationProvider>
+
+            <ValidationProvider
+              :rules="{
+                required: true,
+                phone: /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/,
+              }"
+              v-slot="{ errors, valid, failed }"
+            >
+              <Input
+                label="Телефон"
+                placeholder="+7 (999) 999 99 99"
+                v-mask="'+7 (###) ###-##-##'"
+                v-model="formValues.number"
+                :errors="errors"
+                :valid="valid"
+                :failed="failed"
+                id="phone"
+              />
+            </ValidationProvider>
+
+            <Agreement />
+
+            <Button type="submit" button-type="submit">Перезвоните мне</Button>
+          </form>
+        </ValidationObserver>
       </div>
-
-      <ValidationObserver v-slot="{ handleSubmit }" tag="div">
-        <form @submit.prevent="handleSubmit(save)" class="form__content">
-          <ValidationProvider rules="required|min:5|max:255" v-slot="{ errors, valid, failed }">
-            <Input
-              label="Имя"
-              placeholder="Иван Иванов"
-              :errors="errors"
-              :valid="valid"
-              :failed="failed"
-              v-model="formValues.name"
-              id="name"
-            />
-          </ValidationProvider>
-
-          <ValidationProvider
-            :rules="{
-              required: true,
-              phone: /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/,
-            }"
-            v-slot="{ errors, valid, failed }"
-          >
-            <Input
-              label="Телефон"
-              placeholder="+7 (999) 999 99 99"
-              v-mask="'+7 (###) ###-##-##'"
-              v-model="formValues.number"
-              :errors="errors"
-              :valid="valid"
-              :failed="failed"
-              id="phone"
-            />
-          </ValidationProvider>
-
-          <Agreement />
-
-          <Button type="submit" button-type="submit">Перезвоните мне</Button>
-        </form>
-      </ValidationObserver>
-    </div>
-  </FormWrapper>
+    </FormWrapper>
+    <Toast v-if="isValidForm" title="Заявка принята" message="Наш менеджер свяжется с Вами в ближайшее время!" />
+  </div>
 </template>
 
 <style lang="scss" scoped>
