@@ -93,11 +93,13 @@ export default {
   padding: 20px 0 0 0;
 
   @include mx.tablet {
+    padding: 30px 0 0 0;
     gap: 30px;
   }
 
   @include mx.desktop {
     gap: 50px;
+    padding: 49px 0 0 0;
   }
 
   &__grid {
