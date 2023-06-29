@@ -16,7 +16,6 @@ import AppConsultation from '~/components/pages/main/consultation/AppConsultatio
 import AppServicesMenu from '~/components/pages/main/services-menu/AppServicesMenu.vue'
 import AppCollaborators from '~/components/pages/main/collaborators/AppCollaborators.vue'
 
-import CookiesToast from '~/components/common/toasts/CookiesToast.vue'
 export default {
   name: 'MainPage',
   components: {
@@ -36,7 +35,6 @@ export default {
     AppServicesMenu,
     AppConsultation,
     AppCollaborators,
-    CookiesToast,
   },
 }
 </script>
@@ -60,7 +58,6 @@ export default {
     <AppQuestions />
     <AppContactMenu />
     <AppServicesMenu />
-    <CookiesToast />
   </div>
 </template>
 

@@ -3,6 +3,7 @@
     <NuxtLink to="/main">Главная</NuxtLink>
     <NuxtLink to="/services">Услуги</NuxtLink>
     <NuxtLink to="/forms">Формы</NuxtLink>
+    <NuxtLink to="/requisites">Реквизиты</NuxtLink>
   </div>
 </template>
 

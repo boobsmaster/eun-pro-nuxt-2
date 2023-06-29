@@ -19,7 +19,6 @@ export default {
     <WriteTwo />
     <WriteThird />
     <WriteOne />
-    <CookiesToast />
     <Toast title="Заявка принята" message="Наш менеджер свяжется с Вами в ближайшее время!" />
     <Toast title="Спасибо за подписку!" message="Вы будете получать самые свежие новости первым!" />
   </div>

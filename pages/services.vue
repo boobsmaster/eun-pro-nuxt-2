@@ -1,10 +1,9 @@
 <script>
 import Services from '~/components/pages/services/ServicesPage.vue'
-import CookiesToast from '~/components/common/toasts/CookiesToast.vue'
 
 export default {
   name: 'ServicesPage',
-  components: { Services, CookiesToast },
+  components: { Services },
   layout: 'default',
 }
 </script>
@@ -12,7 +11,6 @@ export default {
 <template>
   <div>
     <Services />
-    <CookiesToast />
   </div>
 </template>
 

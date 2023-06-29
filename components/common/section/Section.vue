@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: "Section",
-};
+  name: 'Section',
+}
 </script>
 
 <template>
@@ -11,11 +11,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/mixins" as mx;
-@use "@/assets/scss/styles/_variables" as vars;
+@use '@/assets/scss/styles/mixins' as mx;
+@use '@/assets/scss/styles/_variables' as vars;
 .section {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 
   width: 100%;
   max-width: 320px;

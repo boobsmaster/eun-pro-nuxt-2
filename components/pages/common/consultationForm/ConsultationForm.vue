@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: "",
-};
+  name: 'ConsultationForm',
+}
 </script>
 
 <template>
@@ -10,48 +10,31 @@ export default {
     <div class="form-consultation__content">
       <div class="form-consultation__content-item">
         <span class="form-consultation__content-item-caption"> Имя </span>
-        <input
-          class="form-consultation__content-input"
-          placeholder="Иван Иванов"
-        />
+        <input class="form-consultation__content-input" placeholder="Иван Иванов" />
       </div>
       <div class="form-consultation__content-item">
         <span class="form-consultation__content-item-caption"> Телефон </span>
-        <input
-          class="form-consultation__content-input"
-          placeholder="+7 (999) 999 99 99"
-        />
+        <input class="form-consultation__content-input" placeholder="+7 (999) 999 99 99" />
       </div>
       <div class="form-consultation__content-item">
         <span class="form-consultation__content-item-caption">Почта</span>
-        <input
-          class="form-consultation__content-input"
-          placeholder="example@mail.ru"
-        />
+        <input class="form-consultation__content-input" placeholder="example@mail.ru" />
       </div>
     </div>
 
     <div class="form-consultation__submit">
       <div class="form-consultation__submit-badge">
-        <img
-          class="form-consultation__submit-badge-icon"
-          src="~/assets/icons/lock-light.svg"
-          alt=""
-        />
-        <span class="form-consultation__submit-badge-text">
-          Я даю согласие на обработку моих персональных данных
-        </span>
+        <img class="form-consultation__submit-badge-icon" src="~/assets/icons/lock-light.svg" alt="" />
+        <span class="form-consultation__submit-badge-text">Я даю согласие на обработку моих персональных данных</span>
       </div>
-      <button class="form-consultation__submit-button">
-        Заказать экспертизу
-      </button>
+      <button class="form-consultation__submit-button">Заказать экспертизу</button>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/styles/mixins" as mx;
-@use "@/assets/scss/styles/variables" as vars;
+@use '@/assets/scss/styles/mixins' as mx;
+@use '@/assets/scss/styles/variables' as vars;
 
 .form-consultation {
   display: flex;
@@ -68,13 +51,16 @@ export default {
 
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
 
+  @include mx.desktop {
+  }
+
   @include mx.tablet {
     padding: 3rem;
-    margin: 0 0 -33px 0;
+    margin: 0 0 -41px 0;
   }
 
   @include mx.desktop {
-    margin: 0 0 -104px 0;
+    margin: 0 0 -61px 0;
     padding: 4rem;
   }
 
