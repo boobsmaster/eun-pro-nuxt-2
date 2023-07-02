@@ -28,7 +28,7 @@ export default {
       <Nuxt />
     </Content>
     <Footer />
-    <CookiesToast></CookiesToast>
+    <CookiesToast />
   </section>
 </template>
 

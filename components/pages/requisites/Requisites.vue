@@ -1,8 +1,8 @@
 <script>
 import Section from '~/components/common/section/Section.vue'
 import Breadcrumbs from '~/components/common/breadcrumbs/Breadcrumbs.vue'
-
 import ConsultationForm from '../common/consultationForm/ConsultationForm.vue'
+
 export default {
   name: 'Requisites',
   components: { Section, Breadcrumbs, ConsultationForm },

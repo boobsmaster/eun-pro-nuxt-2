@@ -4,6 +4,7 @@
     <NuxtLink to="/services">Услуги</NuxtLink>
     <NuxtLink to="/forms">Формы</NuxtLink>
     <NuxtLink to="/requisites">Реквизиты</NuxtLink>
+    <NuxtLink to="/contacts">Контакты</NuxtLink>
   </div>
 </template>
 
