@@ -1,71 +1,102 @@
 <script>
+import Section from '~/components/common/section/Section.vue'
 export default {
   name: 'AppAbout',
+  props: {
+    description: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    const firstColumn = [
+      {
+        number: '1 327',
+        label: 'Выполненные экспертизы',
+      },
+      {
+        number: '285',
+        label: 'Довольных клиентов',
+      },
+      {
+        number: '1 327',
+        label: 'Выполненные экспертизы',
+      },
+    ]
+    const secondColumn = [
+      {
+        number: '124',
+        label: 'Судебных экспертиз',
+      },
+      {
+        number: '48',
+        label: 'Обследование зданий',
+      },
+      {
+        number: '124',
+        label: 'Судебных экспертиз',
+      },
+    ]
+    const thirdColumn = [
+      {
+        number: '124',
+        label: 'Судебных экспертиз',
+      },
+      {
+        number: '48',
+        label: 'Обследование зданий',
+      },
+      {
+        number: '124',
+        label: 'Судебных экспертиз',
+      },
+    ]
+    const columns = [firstColumn, secondColumn, thirdColumn]
+    return {
+      columns,
+    }
+  },
+  components: { Section },
 }
 </script>
 
 <template>
   <section class="about">
     <div class="about__wrapper">
-      <header class="about__header">
-        <div class="about__header-appendix"></div>
+      <Section v-if="description">
+        <p class="about__description">
+          С каждым годом требования к качеству и безопасности строительных объектов становятся все жестче. Для
+          обеспечения безопасности зданий и сооружений разрабатываемая проектная документация подлежит экспертной оценке
+          на соответствие требованиям Федерального закона "О техническом регламенте в строительстве". Экспертизу
+          проводят для объектов нового строительства, реконструкции, реставрации, модернизации и капитального ремонта.
+        </p>
+      </Section>
+      <div v-else class="about__header">
+        <div class="about__header-appendix" />
         <h2 class="about__header-title">Оценочная компания "Экспертиза и управление недвижимостью"</h2>
-      </header>
+      </div>
+
       <div class="about__content">
         <div class="about__statistics">
-          <div class="about__statistics-column">
-            <div class="about__statistics-item">
-              <span class="about__statistics-item-title">1 327</span
-              ><span class="about__statistics-item-subtitle">Выполненные экспертизы</span>
-            </div>
-            <div class="about__statistics-item">
-              <span class="about__statistics-item-title">285</span
-              ><span class="about__statistics-item-subtitle">Довольных клиентов</span>
-            </div>
-            <div class="about__statistics-item">
-              <span class="about__statistics-item-title">1 327</span
-              ><span class="about__statistics-item-subtitle">Выполненные экспертизы</span>
-            </div>
-          </div>
-          <div class="about__statistics-column">
-            <div class="about__statistics-item">
-              <span class="about__statistics-item-title">124</span
-              ><span class="about__statistics-item-subtitle">Судебных экспертиз</span>
-            </div>
-            <div class="about__statistics-item">
-              <span class="about__statistics-item-title">48 </span
-              ><span class="about__statistics-item-subtitle">Обследование зданий</span>
-            </div>
-            <div class="about__statistics-item">
-              <span class="about__statistics-item-title">124</span
-              ><span class="about__statistics-item-subtitle">Судебных экспертиз</span>
-            </div>
-          </div>
-          <div class="about__statistics-column">
-            <div class="about__statistics-item">
-              <span class="about__statistics-item-title">124</span
-              ><span class="about__statistics-item-subtitle">Судебных экспертиз</span>
-            </div>
-            <div class="about__statistics-item">
-              <span class="about__statistics-item-title">48</span
-              ><span class="about__statistics-item-subtitle">Обследование зданий</span>
-            </div>
-            <div class="about__statistics-item">
-              <span class="about__statistics-item-title">124</span
-              ><span class="about__statistics-item-subtitle">Судебных экспертиз</span>
+          <div v-for="column in columns" class="about__statistics-column">
+            <div v-for="item in column" :key="item.number" class="about__statistics-item">
+              <span class="about__statistics-item-title">{{ item.number }}</span>
+              <span class="about__statistics-item-subtitle">{{ item.label }}</span>
             </div>
           </div>
         </div>
+
         <div class="about__info">
           <div class="about__info-image">
             <img class="about__info-image-source" src="~/assets/images/tas-agro-mobile.png" alt="" />
           </div>
+
           <div class="about__info-content">
-            <span class="about__info-content-title">Бобров Денис Вадимович</span
-            ><span class="about__info-content-subtitle">Генеральный директор. Кадастровый инженер</span>
+            <span class="about__info-content-title">Бобров Денис Вадимович</span>
+            <span class="about__info-content-subtitle">Генеральный директор. Кадастровый инженер</span>
           </div>
+
           <div class="about__info-content-appeal">
-            <!-- <div class="about__info-content-appeal-button"> -->
             <svg
               width="40"
               height="41"
@@ -80,29 +111,13 @@ export default {
                 fill="#FFB701"
               />
             </svg>
-
-            <!-- <div class="about__info-content-appeal-button-img">
-                <svg
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                  class="about__info-content-appeal-button-img-source"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="xMidYMid none"
-                >
-                  <path
-                    d="M16.7074 12.2952L8.25877 6.38114C7.72855 6.00998 7 6.38931 7 7.03652V17.9635C7 18.6107 7.72855 18.99 8.25877 18.6189L16.7074 12.7048C16.8496 12.6053 16.8496 12.3947 16.7074 12.2952Z"
-                    fill="#FFB701"
-                  />
-                </svg>
-              </div> -->
-            <!-- </div> -->
             <span class="about__info-content-appeal-description">Видеообращение для будущих клиентов</span>
           </div>
+
           <div class="about__image about__image_tablet">
             <img class="about__info-image-source" src="~/assets/images/tas-agro-tablet.png" alt="" />
           </div>
+
           <div class="about__image about__image_desktop">
             <img class="about__info-image-source" src="~/assets/images/tas-agro-desktop.png" alt="" />
           </div>
@@ -131,6 +146,18 @@ export default {
     padding-top: 7rem;
   }
 
+  &__description {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 143%;
+    font-style: normal;
+
+    color: var(--black-light, #898088);
+
+    @include ut.desktop {
+      font-size: 16px;
+    }
+  }
   &__image {
     position: absolute;
     display: none;

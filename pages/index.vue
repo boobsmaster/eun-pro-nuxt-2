@@ -5,6 +5,7 @@
     <NuxtLink to="/forms">Формы</NuxtLink>
     <NuxtLink to="/requisites">Реквизиты</NuxtLink>
     <NuxtLink to="/contacts">Контакты</NuxtLink>
+    <NuxtLink to="/about">О компании</NuxtLink>
   </div>
 </template>
 
