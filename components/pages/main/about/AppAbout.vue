@@ -80,7 +80,9 @@ export default {
         <div class="about__statistics">
           <div v-for="column in columns" class="about__statistics-column">
             <div v-for="item in column" :key="item.number" class="about__statistics-item">
-              <span class="about__statistics-item-title">{{ item.number }}</span>
+              <span class="about__statistics-item-title">
+                {{ item.number }}
+              </span>
               <span class="about__statistics-item-subtitle">{{ item.label }}</span>
             </div>
           </div>
