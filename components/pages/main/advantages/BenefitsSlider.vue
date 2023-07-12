@@ -56,8 +56,6 @@ export default {
     this.slider.on('reachBeginning', () => {
       const afterElement = this.$refs.after
 
-      console.log(afterElement)
-
       afterElement.style.opacity = '1'
       afterElement.style.zIndex = '1'
     })
@@ -73,6 +71,7 @@ export default {
           <div class="benefits-slider__check">
             <img class="benefits-slider__check-image" src="~/assets/icons/done.svg" alt="" />
           </div>
+
           <div class="benefits-slider__info">
             <span class="benefits-slider__info-title">{{ slide.title }}</span>
             <span class="benefits-slider__info-subtitle">{{ slide.subtitle }}</span>

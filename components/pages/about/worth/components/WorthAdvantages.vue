@@ -133,6 +133,10 @@ export default {
     row-gap: 30px;
     column-gap: 20px;
 
+    @include mx.tablet {
+      justify-content: space-between;
+    }
+
     @include mx.desktop {
       row-gap: 40px;
       column-gap: 30px;

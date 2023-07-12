@@ -8,60 +8,86 @@ export default {
 
 <template>
   <div class="video">
-    <div class="video__overlay">
-      <Icon name="play-button-video" class="video__overlay-icon" />
-      <span class="video__overlay-text">История нашей компании</span>
-    </div>
+    <img src="~/assets/images/about-video-overlay.png" alt="" class="video__img" />
+    <a href="https://youtube.com" target="_blank" class="video__link" />
 
-    <iframe
-      frameborder="0"
-      allowfullscreen
-      title="YouTube video player"
-      class="video__frame"
-      src="https://www.youtube.com/embed/d1gmuWdZzkw"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    />
+    <div class="video__content">
+      <Icon name="play-button-video" class="video__icon" />
+      <span class="video__text">История нашей компании</span>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/scss/styles/mixins' as mx;
+@use '@/assets/scss/styles/variables' as vars;
+
 .video {
   position: relative;
-  height: auto;
+
+  width: 100%;
+  height: 181px;
 
   overflow: hidden;
   border-radius: 5px;
 
-  &__overlay {
+  @include mx.tablet {
+    height: 405px;
+  }
+
+  @include mx.desktop {
+    height: 502px;
+    max-width: 892px;
+    margin: 0 auto;
+  }
+
+  &__img {
     position: absolute;
     top: 0;
     left: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     width: 100%;
     height: 100%;
   }
 
-  &__overlay-icon {
-    width: 60px;
-    height: 60px;
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
   }
 
-  &__overlay-text {
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+
+    flex: 0 0 auto;
+  }
+
+  &__text {
     font-size: 16px;
     font-weight: 500;
     line-height: 143%;
     font-style: normal;
 
     color: var(--white, #f3f3f3);
-  }
 
-  &__frame {
-    width: 100%;
-    height: 181px;
+    width: 140px;
   }
 }
 </style>
